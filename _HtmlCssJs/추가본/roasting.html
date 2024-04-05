@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../day08/reset.css">
+
+    <link rel="stylesheet" href="../project2/eventclick.css">
+
+    <style>
+        @font-face {
+
+font-family: Noto_Sans_KR;
+
+src: url(../font/Noto_Sans_KR/NotoSansKR-VariableFont_wght.ttf);
+
+}
+
+body{
+
+font-family: Noto_Sans_KR;
+
+color: black;
+
+}
+
+.wrap{
+
+width: 100%;
+
+min-width: 1200px;
+
+    text-align: center; /* 내부 요소를 가로 방향으로 중앙 정렬 */
+
+
+}
+
+.inner{
+
+width: 1170px;
+
+margin: auto;
+
+box-sizing: border-box;
+
+}
+
+/* header */
+
+
+
+header>.inner{
+
+height: 115px;
+
+/* background-color: bisque; */
+
+position: relative;
+
+}
+
+header>.inner>h1{
+
+position: absolute;
+
+top: 15px;
+
+left: 0;
+
+}
+
+header>.inner>.top-menu{
+
+display: flex;
+
+justify-content: flex-end;
+
+}
+
+header>.inner>.top-menu>li>a{
+color: black;
+
+}
+
+header>.inner>.top-menu>li{
+
+padding: 10px 20px;
+
+position: relative;
+
+}
+
+header>.inner>.nav>ul{
+
+display: flex;
+
+justify-content: center;
+
+height: 79px;
+
+}
+
+header>.inner>.nav>ul>li{
+
+margin: 0 40px;
+
+}
+
+header>.inner>.nav>ul>li>a{
+color: black;
+
+font-size: large;
+
+font-weight: 700;
+
+line-height: 79px;
+
+}
+
+header>.inner>.nav>ul>li>a:hover{
+
+color: red;
+
+}
+
+
+main{
+
+position: relative;
+
+}
+
+
+
+​
+
+/* footer */
+
+footer{
+
+/* background: #97a9ea; */
+
+border-top: 1px solid gray;
+
+}
+
+footer>.inner{
+
+height: 320px;
+
+padding: 50px 0;
+
+/* background: #8489ed; */
+
+}
+
+footer>.inner>ul{
+
+display: flex;
+
+justify-content: flex-start;
+
+border-bottom: 1px solid gray;
+
+}
+
+footer>.inner>ul>li{
+
+padding: 10px 20px 30px;
+
+}
+
+.red{
+
+color: red;
+
+}
+
+footer>.inner>.footerBt{
+
+margin: 20px 0;
+
+display: flex;
+
+justify-content: space-between;
+
+}
+
+footer>.inner>.footerBt .t{
+
+margin: 10px 0;
+
+}
+
+footer>.inner>.footerBt .t>span{
+
+padding: 10px 20px;
+
+position: relative;
+
+/* font-size: 15px; */
+
+color: #5a5a5a;
+
+}
+
+footer>.inner>.footerBt .c{
+
+margin: 30px 10px;
+
+padding-left: 10px;
+
+font-size: small;
+
+}
+
+footer>.inner>.footerBt>.right>select{
+
+width: 210px;
+
+height: 45px;
+
+padding-left: 20px;
+
+border: 1px solid rgb(204, 204, 204);
+
+appearance: none;
+
+background-image: url(img/sel_icon.png);
+
+background-repeat: no-repeat;
+
+background-position: 90% 50%;
+
+font-size: 15px;
+
+}
+
+.menu {
+display: flex;
+flex-wrap: wrap; /* 필요한 경우 객체가 한 줄에 다 나타나지 않을 경우 여러 줄에 걸쳐 표시되도록 설정합니다. */
+justify-content: space-between; /* 가로 여백을 최대한 활용하여 각 객체를 좌우로 최대한 분배합니다. */
+margin-top: 50px;
+}
+
+.box1 {
+flex-basis: calc(33.33% - 20px); /* 가로로 3개씩 배열되도록 설정하고, 마진을 고려하여 너비를 조정합니다. */
+margin-bottom: 20px; /* 객체들 사이의 아래 여백 조정 */
+padding: 20px; /* 내부 여백 설정 */
+border: 1px solid #ccc; /* 테두리 추가 */
+box-sizing: border-box; /* 테두리와 패딩을 포함한 객체의 크기를 정확히 설정합니다. */
+}
+
+/* 선택적으로 추가 스타일링 가능 */
+.box1 img {
+display: block; /* 이미지를 블록 요소로 설정하여 텍스트와 수직 정렬합니다. */
+margin: 0 auto 10px; /* 이미지의 아래 여백 조정 및 수평 가운데 정렬 */
+max-width: 100%; /* 이미지가 객체의 너비를 초과하지 않도록 설정합니다. */
+}
+
+.box1 h3 {
+font-size: 1.2em; /* 제목의 폰트 크기 조정 */
+margin-bottom: 10px; /* 제목의 아래 여백 조정 */
+}
+
+.box1 p {
+margin-bottom: 10px; /* 단락의 아래 여백 조정 */
+}
+
+.box1 p.del {
+text-decoration: line-through; /* 가격이 할인되었을 때 가로 줄을 추가합니다. */
+}
+
+.box1 p.price {
+font-size: 1.2em; /* 가격의 폰트 크기 조정 */
+font-weight: bold; /* 가격의 굵은체 설정 */
+}
+
+.box1 p.payment {
+color: #009900; /* 결제 문구의 색상 설정 */
+font-weight: bold; /* 결제 문구의 굵은체 설정 */
+}
+
+
+/* 스크롤바 디자인 */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: darkgray;
+border-radius: 5px;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+position: fixed;
+top: 50%;
+transform: translateY(-50%);
+right: 20px;
+width: 150px;
+background-color: none;
+font-style: none;
+padding: 10px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+z-index: 1000; 
+background-color: black;
+
+}
+#video-container {
+            /* 비디오 요소의 테두리를 날카롭게 설정합니다. */
+            overflow: hidden;
+        }
+#sp {
+display: flex;
+justify-content: center; /* 수평 가운데 정렬 */
+margin: 0 auto; /* 가운데 정렬을 위한 마진 설정 */
+/*filter: blur(8px);  블러 효과 적용 */
+border-radius: 0;
+}
+
+
+
+.sidebar ul li a {
+color: white; /* 글자색을 블랙으로 설정 */
+text-decoration: none; /* 링크의 밑줄 제거 */
+}
+
+.sidebar ul li a:hover {
+color: gray; /* 호버 시에도 글자색을 블랙으로 유지 */
+}
+
+
+/* 좌에서 우로 페이드 인 애니메이션 설정
+ */
+@keyframes fadeInFromLeft {
+from {
+    opacity: 0; /* 시작할 때 투명도를 0으로 설정하여 숨깁니다. */
+   
+}
+to {
+    opacity: 1; /* 끝날 때 투명도를 1로 설정하여 나타납니다. */
+   
+}
+}
+
+/* sp 요소에 fadeInFromLeft 애니메이션 적용 */
+#sp {
+opacity: 0; /* 초기에 투명도를 0으로 설정하여 숨깁니다. */
+animation: fadeInFromLeft 1s ease forwards; /* fadeInFromLeft 애니메이션을 1초 동안 적용합니다. */
+}
+
+
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+      <!-- 사이드바 -->
+<div class="sidebar">
+    <ul>
+        <li><a href="../project2/roasting.html">원두 로스팅</a></li>
+        <li><a href="../project2/가상카페.html">가상카페</a></li>
+      
+        <a href="#top" class="top" style="color: white;">top</a>
+
+
+    </ul>
+</div>
+
+    <div class="wrap" id="top">
+
+        <header>
+
+            <div class="inner">
+
+                <h1>
+
+                    <a href="">
+
+                        <a href="../project2/projet2.html"><img src="../project2/IMG/로고2.png" alt="" style="width: 100px; height: 100px;"></a>
+                        
+
+                    </a>
+
+                </h1>
+
+                <ul class="top-menu">
+
+                    <li><a href="">임차문의</a></li>
+
+                    <li ><a href="" class="before">RECRUIT</a></li>
+
+                    <li><a href="" class="bold">ENG</a></li>
+
+                </ul>
+
+                <nav class="nav">
+
+                    <ul>
+
+                        <li><a href="">Menu</a></li>
+
+                        <li><a href="">Store</a></li>
+
+                        <li><a href="">What's New</a></li>
+
+                        <li><a href="">Story</a></li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </header>
+
+        <section>
+
+            <!-- 배경  -->
+
+            <ul>
+
+                <li><a href=""><img src="../project2/IMG/bg2.jpg" alt="" style="width: 400px; height: 300px; justify-content: center;" ></a></li>
+
+
+            </ul>
+
+        </section>
+
+        <main>
+
+    
+
+
+           
+<div id="video-container">
+    <video id="sp" autoplay loop muted>
+        <source src="../project2/IMG/video.mp4" type="video/mp4">
+        <!-- 다른 동영상 형식을 지원하는 경우에는 여기에 추가할 수 있습니다. -->
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+          
+           
+
+            
+
+        </main>
+
+        <footer>
+
+            <!-- footer -->
+
+            <div class="inner">
+
+                <ul>
+
+                    <li><a href="">가상카페 소개</a></li>
+
+                    <li><a href="">기업 제휴 및 입점 문의</a></li>
+
+                    <li><a href="">이용약관</a></li>
+
+                    <li><a href="" class="red">개인정보처리방침</a></li>
+
+                    <li><a href="">사이트맵</a></li>
+
+                </ul>
+
+                <div class="footerBt">
+
+                    <div>
+
+                        <div class="t">
+
+                            <span>인천광역시 남동구 남동대로 935</span>
+
+                            <span class="before">대표자 : 김홍길</span>
+
+                        </div>
+
+                        <div class="t">
+
+                            <span>사업자등록번호 : 219-85-00014</span>
+
+                            <span class="before">통신판매업신고번호 : 송파 제5513호</span>
+
+                            <span class="before">전화 : 1000-0000</span>
+
+                        </div>
+
+                        <div class="c">COPYRIGHT 2018 LOTTEWORLD. ALL RIGHTS RESERVED.</div>
+
+                    </div>
+
+                    <div class="right">
+
+                        <select id="selectFamilySite" title="계열사 관련 사이트 새창열기">
+
+                            <option value="">계열사 관련 사이트</option>
+
+                            <option value="https://www.lotte.co.kr/main.do">이디야</option>
+
+                            <option value="https://www.lottewellfood.com/">할리스</option>
+
+                            <option value="https://company.lottechilsung.co.kr/kor/main/index.do">파스쿠치</option>
+
+                            
+                            <option value="https://www.fujifilm.co.kr/main.do">스타벅스</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+
+    <script>
+        function openFile(filename) {
+            // 내 워크스페이스에 있는 파일 경로를 사용하여 새 창으로 페이지를 연다.
+            window.open(filename, '_blank');
+        }
+
+
+         // 'top' 버튼을 클릭하면 상단으로 스크롤하는 기능
+         document.querySelector('.top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+ 
+       
+    </script>
+
+</body>
+
+
+
+
+</html>

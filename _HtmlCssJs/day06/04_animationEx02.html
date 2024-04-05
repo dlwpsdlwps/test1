@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes jump {
+            0%{bottom: 0;}
+            25%{bottom: 50px;}
+            50%{bottom: 0;}
+            75%{bottom: 100px;}
+            100%{bottom: 0px;}
+        }
+        .text{
+            font-size: 100px;
+            font-weight: 700;
+            animation-name: jump;
+            animation-duration: 900ms;
+            animation-iteration-count: infinite;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="text">hihihi</div>
+</body>
+</html>

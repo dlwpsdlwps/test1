@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: blue;
+        }
+
+        .container {
+            width: 300px;
+            background-color: aquamarine;
+            /* 화면 정중앙에 위치 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px 30px;
+        }
+
+        .text-field,
+        .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        .btn {
+            /* background-color: rgb(27, 134, 99); */
+            /* color: white; */
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .link {
+            margin-top: 30px;
+        }
+
+        .link a {
+            color: rgb(95, 94, 94);
+            text-decoration: none;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <input type="text" class="text-field" name="id" placeholder="아이디">
+            <input type="password" class="text-field" name="pw" placeholder="비밀번호" id="password">
+            <button type="submit" class="btn" value="로그인" disabled>로그인</button>
+        </form>
+        <div class="link">
+            <a href="">비밀번호를 잊어버리셨나요?</a>
+        </div>
+    </div>
+    <script>
+        //event 'input'
+        //^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*].{8,}$
+        //disable = true => 비활성화
+        //disable = false => 활성화
+        let input = document.querySelectorAll('.text-field');
+        let btn = document.querySelector('.btn');
+
+        // input[0].addEventListener('input',(e)=>{
+        //     let str = '';
+        //     str += e.target.value;
+        //     console.log(str);
+
+        //     if(str.match(/^(?=.*\d(?=.*[a-zA-Z]))/)){
+
+        //     }
+        // });
+
+        input[1].addEventListener('input', (e) => {
+            let str = '';
+            str += e.target.value;
+            console.log(str);
+
+            if (str.match(/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*].{8}$/)) {
+                btn.disabled = 0;
+                btn.style.color = 'white';
+                btn.style.background = 'rgb(27, 134, 99)';
+            } else {
+                btn.disabled = 1;
+                btn.style.color = '';
+                btn.style.background = '';
+            }
+        });
+    </script>
+</body>
+
+</html>

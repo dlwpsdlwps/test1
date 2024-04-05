@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        input 2개 생성 => 과목, 점수
+        map에 추가
+        출력 => map을 출력 ul => li 형태로 출력 html : 89
+        결과 => 합계, 평균, 합격여부(60이상이면 합격) => h3
+     -->
+    과목 : <input type="text" id="sub"><br>
+    점수 : <input type="text" id="sco"><br>
+    <button type="button" id="b1">추가</button>
+    <button type="button" id="b2">출력</button>
+    <button type="button" id="b3">결과</button>
+    <ul id="list"></ul>
+    <h1 id="res"></h1>
+    <script>
+        const map = new Map();
+        let sum = 0;
+        let cnt = 0;
+
+        document.getElementById('b1').addEventListener('click', () => {
+            map.set(sub.value, sco.value);
+            sum += Number(sco.value);
+            cnt++;
+            document.getElementById('sub').value = null;
+            document.getElementById('sco').value = null;
+        });
+        document.getElementById('b2').addEventListener('click', () => {
+            map.forEach(function (v, i) {
+                document.getElementById('list').innerHTML += `<li>${i} : ${v}</li>`
+            });
+        });
+        document.getElementById('b3').addEventListener('click', () => {
+            document.getElementById('res').innerText = `과목의 점수합계 : ${sum}, 평균 : ${(sum / cnt).toFixed(2)}, 합격여부 : ${(sum / cnt >= 60) ? '합격' : '불합격'}`;
+        });
+
+    </script>
+</body>
+
+</html>

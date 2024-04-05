@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .head {
+            height: 60px;
+            background-color: beige;
+            line-height: 60px;
+            padding-left: 50px;
+            font-weight: bold;
+        }
+        .main {
+            height: 500px;
+            background-image: url(../image/강아지1.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: black;
+        }
+        .desc {
+            height: 350px;
+            padding: 50px;
+            
+        }
+        .sub1 {
+            height: 300px;
+            background-color: blueviolet;
+            text-align: center;
+            line-height: 300px;
+            background-image: url(../image/pic1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .sub1 a{
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            border: 3px solid white;
+            padding: 10px
+        }
+        .sub2 {
+            height: 300px;
+            background-color: brown;
+            background-image: url(../image/pic2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .sub3 {
+            height: 300px;
+            background-color: chartreuse;
+            background-image: url(../image/pic3.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        @media screen and (min-width:800px) {
+            .sub1{
+                height: 250px;
+                width: 50%;
+                float: left;
+            }
+            .sub2{
+                height: calc(250px / 2);
+                width: 50%;
+                float: right;
+            }
+            .sub3{
+                height: calc(250px / 2);
+                width: 50%;
+                float: right;
+            }
+        }
+        @media screen and (min-width:1200px) {
+            .main{
+                width: 50%;
+                float: left;
+            }
+            .desc{
+                height: 500px;
+                width: 50%;
+                float: right;
+            }
+            .sub1{
+                height: 250px;
+                width: 50%;
+                float: left;
+            }
+            .sub2{
+                height: calc(250px / 2);
+                width: 50%;
+                float: right;
+            }
+            .sub3{
+                height: calc(250px / 2);
+                width: 50%;
+                float: right;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">IN'O</div>
+    <div class="main"></div>
+    <div class="desc">
+        <p>
+            <h3>What is Lorem Ipsum?</h3>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+            a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+            of Lorem Ipsum.
+        </p>
+    </div>
+    <div class="sub1">
+        <a href="">VIEW MORE</a>
+    </div>
+    <div class="sub2"></div>
+    <div class="sub3"></div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>오늘은??</h1>
+    <button type="button" id="btn">Today</button>
+    <h3 id="result">
+        <!-- 오늘 날짜와 요일 출력 -->
+        <!-- 2024. 03. 19.(화) -->
+    </h3>
+    <script>
+        let result = document.getElementById('result');
+
+        document.getElementById('btn').addEventListener('click', () => {
+            let ymd = new Date().toLocaleDateString();
+            let week = new Date().getDay();
+            switch (week) {
+                case 0: week = '(일)'; break;
+                case 1: week = '(월)'; break;
+                case 2: week = '(화)'; break;
+                case 3: week = '(수)'; break;
+                case 4: week = '(목)'; break;
+                case 5: week = '(금)'; break;
+                case 6: week = '(토)'; break;
+                default: alert('잘못된 요일입니다.');
+            }
+            result.innerText = ymd + week;
+        });
+
+    </script>
+</body>
+
+</html>

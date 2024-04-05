@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+</head>
+<body>
+    <p><h1>공지사항</h1></p>
+    <hr>
+    <form action="">
+        작성자 <input type="text" name="name"><br>
+        제목 <input type="text" name="title">
+        <input type="checkbox" name="notice" id="n">
+        <label for="n"></label>공지<br>
+        <br>
+        내용<br>
+        <textarea name="text" cols="50" rows="10"></textarea>
+        <br>
+        <hr>
+        파일첨부<br>
+        <input type="text" disabled> <input type="file"><br>
+        <input type="text" disabled> <input type="file"><br>
+        <input type="text" disabled> <input type="file"><br>
+        <br>
+        <p><small><pre>
+- 파일 확장자가 ~인 파일만
+  업로드하실 수 있습니다. (파일명은 특수문자 ~ 사용금지!)
+- 파일 업로드 시, 첨부파일 1개당 200MB까지 가능합니다.
+        </pre></small></p>
+        <hr>
+        <input type="reset" value="취소">
+        <input type="submit" value="등록">
+    </form>
+</body>
+</html>

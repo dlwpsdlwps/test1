@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>성적확인</legend>
+            이름: <input type="text" id="myName"><br>
+            국어: <input type="number" id="kor"><br>
+            영어: <input type="number" id="eng"><br>
+            수학: <input type="number" id="math"><br>
+            <button type="button" id="btn">성적계산</button>
+        </fieldset>
+    </form>
+    <h3 id="result">
+        <!-- 이름, 합계, 평균, 합격 여부 (60이상이면 pass / fail) -->
+        <!-- 입력한 성적의 점수값이 0~100 사이의 값이 아니면 alert 띄워 안내 -->
+    </h3>
+    <script>
+        let result = document.getElementById('result');
+        document.getElementById('btn').addEventListener('click', () => {
+            let korVal = Number(kor.value);
+            let engVal = Number(eng.value);
+            let mathVal = Number(math.value);
+            let sum = korVal + engVal + mathVal;
+            if (0 <= kor.value && kor.value <= 100 && 0 <= eng.value && eng.value <= 100 && 0 <= math.value && math.value <= 100) {
+                result.innerText = `이름: ${myName.value}\n`;
+                result.innerText += `국어: ${korVal}\n`;
+                result.innerText += `영어: ${engVal}\n`;
+                result.innerText += `수학: ${mathVal}\n`;
+                result.innerText += `합계: ${sum}\n`;
+                result.innerText += `평균: ${sum / 3}\n`;
+                if (sum / 3 >= 60) {
+                    result.innerText += `결과: pass`;
+                } else {
+                    result.innerText += `결과: fail`
+                }
+            } else {
+                alert('올바른 점수가 아닙니다.');
+                result.innerText = null;
+                kor.value = null;
+                eng.value = null;
+                math.value = null;
+            }
+            // function check(num) {
+            //     if (num < 0 && num > 100){
+            //         result.innerText = null;
+            //         kor.value = null;
+            //         eng.value = null;
+            //         math.value = null;
+            //         return false;
+            //     }else{
+            //         return true;
+            //     }
+            // }
+        })
+    </script>
+</body>
+
+</html>

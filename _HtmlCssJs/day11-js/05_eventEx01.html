@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        성적확인
+        이름: 
+        국어: 
+        영어: 
+        수학: 
+        성적계산 버튼
+        -----------------------
+        이름: 홍길동
+        국어: 80
+        영어: 90
+        수학: 80
+        합계: ??
+        평균: ?? 표시
+     -->
+    <form action="">
+        <fieldset>
+            <legend>성적확인</legend>
+            이름: <input type="text" id="myName"><br>
+            국어: <input type="number" id="kor"><br>
+            영어: <input type="number" id="eng"><br>
+            수학: <input type="number" id="math"><br>
+            <button type="button" id="btn" onclick="score()">성적계산</button>
+            <button type="button" id="btn2" onclick="score2()">성적계산2</button>
+        </fieldset>
+    </form>
+
+    <ol id="ol"></ol>
+    <h3 id="info"></h3>
+
+    <script>
+        const ol = document.getElementById('ol');
+        const info = document.getElementById('info');
+        
+        function score(){
+            let korVal = Number(kor.value);
+            let engVal = Number(eng.value);
+            let mathVal = Number(math.value);
+            ol.innerHTML = `<li>이름: ${myName.value}</li>`;
+            ol.innerHTML += `<li>국어: ${kor.value}</li>`;
+            ol.innerHTML += `<li>영어: ${eng.value}</li>`;
+            ol.innerHTML += `<li>수학: ${math.value}</li>`;
+            ol.innerHTML += `<li>합계: ${korVal+engVal+mathVal}</li>`;
+            ol.innerHTML += `<li>평균: ${(korVal+engVal+mathVal)/3}</li>`;
+        }
+
+        function score2(){
+            let korVal = Number(kor.value);
+            let engVal = Number(eng.value);
+            let mathVal = Number(math.value);
+            info.innerText = `이름: ${myName.value}`;
+            info.innerHTML += `<br>`;
+            info.innerText += ` 국어: ${kor.value}`;
+            info.innerHTML += `<br>`;
+            info.innerText += ` 영어: ${eng.value}`;
+            info.innerHTML += `<br>`;
+            info.innerText += ` 수학: ${math.value}`;
+            info.innerHTML += `<br>`;
+            info.innerText += ` 합계: ${korVal+engVal+mathVal}`;
+            info.innerHTML += `<br>`;
+            info.innerText += ` 평균: ${(korVal+engVal+mathVal)/3}`;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <button type="button" id="s" class="btn"><img src="../image/가위.png" alt="가위"></button>
+    <button type="button" id="r" class="btn"><img src="../image/바위.png" alt="바위"></button>
+    <button type="button" id="p" class="btn"><img src="../image/보.png" alt="보"></button>
+    <h3 id="result"></h3>
+    <script>
+        let win = 0;
+        let draw = 0;
+        let lose = 0;
+        let rate = 0;
+        let cnt = 0;
+        let ment = '';
+        document.getElementById('s').addEventListener('click', () => {
+            let player = '가위';
+            let com = Math.floor(Math.random() * 3) + 1;
+            cnt++;
+            (com == 1) ? draw++ : (com == 3) ? win++ : lose++;
+            (com == 1) ? ment='비겼습니다.' : (com == 3) ? ment = '이겼습니다.' : ment = '졌습니다.';
+            switch (com) {
+                case 1: com = '가위'; break;
+                case 2: com = '바위'; break;
+                case 3: com = '보'; break;
+            }
+            document.getElementById('result').innerText =
+                `
+            player: ${player} / com: ${com} player가 ${ment}\n
+            현재 전적\n
+            승:${win} / 무:${draw} / 패:${lose}\n
+            승률: ${(win / cnt * 100).toFixed(1)}%
+            `;
+        });
+        document.getElementById('r').addEventListener('click', () => {
+            let player = '바위';
+            let com = Math.floor(Math.random() * 3) + 1;
+            cnt++;
+            (com == 2) ? draw++ : (com == 1) ? win++ : lose++;
+            (com == 2) ? ment='비겼습니다.' : (com == 1) ? ment = '이겼습니다.' : ment = '졌습니다.';
+            switch (com) {
+                case 1: com = '가위'; break;
+                case 2: com = '바위'; break;
+                case 3: com = '보'; break;
+            }
+            document.getElementById('result').innerText =
+                `
+            player: ${player} / com: ${com} player가 ${ment}\n
+            현재 전적\n
+            승:${win} / 무:${draw} / 패:${lose}\n
+            승률: ${(win / cnt * 100).toFixed(1)}%
+            `;
+        });
+        document.getElementById('p').addEventListener('click', () => {
+            let player = '보';
+            let com = Math.floor(Math.random() * 3) + 1;
+            cnt++;
+            (com == 3) ? draw++ : (com == 2) ? win++ : lose++;
+            (com == 3) ? ment='비겼습니다.' : (com == 2) ? ment = '이겼습니다.' : ment = '졌습니다.';
+            switch (com) {
+                case 1: com = '가위'; break;
+                case 2: com = '바위'; break;
+                case 3: com = '보'; break;
+            }
+            document.getElementById('result').innerText =
+                `
+            player: ${player} / com: ${com} player가 ${ment}\n
+            현재 전적\n
+            승:${win} / 무:${draw} / 패:${lose}\n
+            승률: ${(win / cnt * 100).toFixed(1)}%
+            `;
+        });
+
+
+    </script>
+</body>
+
+</html>

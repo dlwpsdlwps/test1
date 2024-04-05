@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Travel</h1>
+    <ul>
+        <li><a id="h">Home</a></li>
+        <li><a id="s">Seoul</a></li>
+        <li><a id="t">Tokyo</a></li>
+        <li><a id="p">Paris</a></li>
+    </ul>
+    <div id="res"></div>
+    <script>
+        document.getElementById('h').addEventListener('click', () => {
+            document.getElementById('res').innerHTML = `<img src="../image/1.png" alt="">`;
+        });
+        document.getElementById('s').addEventListener('click', () => {
+            document.getElementById('res').innerHTML = `<img src="../image/2.png" alt="">`;
+        });
+        document.getElementById('t').addEventListener('click', () => {
+            document.getElementById('res').innerHTML = `<img src="../image/3.png" alt="">`;
+        });
+        document.getElementById('p').addEventListener('click', () => {
+            document.getElementById('res').innerHTML = `<img src="../image/4.png" alt="">`;
+        });
+    </script>
+</body>
+
+</html>

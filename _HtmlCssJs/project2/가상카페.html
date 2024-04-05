@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../day08/reset.css">
+    <link rel="stylesheet" href="../project2/project2.css">
+    <style>
+        /* 추가된 CSS */
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider-item {
+            min-width: 400px;
+            flex: 0 0 auto;
+            margin: 0 5px; /* 각 박스들 사이에 5px의 마진 추가 */
+            text-align: center; /* 이미지와 텍스트를 중앙 정렬 */
+            display: none; /* 모든 슬라이드 숨김 */
+        }
+
+        .slider-navigation {
+            position: absolute;
+            top: 10px; /* 수정된 부분 */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .slider-navigation button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: gray;
+            border: none;
+            margin: 0 5px; /* 각 네비게이션 버튼 사이에 5px의 마진 추가 */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .slider-navigation button.active {
+            background-color: brown;
+        }
+        .slider-navigation button {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 사이드바 -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="../project2/roasting.html">원두 로스팅</a></li>
+            <li><a href="../project2/가상카페.html">가상카폐</a></li>
+            <a href="#top" class="top" style="color: white;">top</a>
+        </ul>
+    </div>
+
+    <div class="wrap" id="top">
+        <header>
+            <div class="inner">
+                <h1>
+                
+                        <a href="../project2/projet2.html"><img src="../project2/IMG/로고2.png" alt="" style="width: 100px; height: 100px;"></a>
+                    
+                </h1>
+                <ul class="top-menu">
+                    <li><a href="">임차문의</a></li>
+                    <li><a href="" class="before">RECRUIT</a></li>
+                    <li><a href="" class="bold">ENG</a></li>
+                </ul>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="">Menu</a></li>
+                        <li><a href="">Store</a></li>
+                        <li><a href="">What's New</a></li>
+                        <li><a href="">Story</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <section>
+            <!-- 배경  -->
+            <ul>
+                <a href="../project2/projet2.html"><img src="../project2/IMG/맛선택3.jpg" alt="" style="border-radius: 50%;" ></a>
+            </ul>
+            
+        </section>
+        <main>
+            <!-- 이벤트 박스 -->
+            <div class="menu slider-container">
+                <div class="slider-wrapper" id="sw">
+                    <div class="slider-item">
+                        <!-- 1번 슬라이드 -->
+                        <a href="../project2/IMG/추출3.jpg" id="s1"><img src="../project2/IMG/선택2.jpg" width="400" height="400"></a>
+                        <h1>CHOICE</h1>
+                        <img class="slide-image" src="../project2/IMG/원두선택1.jpg" width="600" height="1000" alt="CHOICE">
+                    </div>
+                    <div class="slider-item">
+                        <!-- 2번 슬라이드 -->
+                        <a href="../project2/eventclick.html"><img src="../project2/IMG/분쇄2.jpg" width="400" height="400"></a>
+                        <h1>Crushing Density</h1>
+                        <img class="slide-image" src="../project2/IMG/원두 입자.jpg" alt="Crushing Density">
+                    </div>
+                    <div class="slider-item">
+                        <!-- 3번 슬라이드 -->
+                        <a href="../project2/eventclick.html"><img src="../project2/IMG/추출3.jpg" width="400" height="400"></a>
+                        <h1>Extraction Time</h1>
+                        <img class="slide-image" src="../project2/IMG/추출시간.jpg" width="600" height="600" alt="Extraction Time">
+                    </div>
+
+                    
+                </div>
+                <!-- 좌우 슬라이드 네비게이션 -->
+                <div class="slider-navigation">
+                    <button class="nav-btn prev" onclick="goToSlide(0)"></button>
+                    <button class="nav-btn next" onclick="goToSlide(1)"></button>
+                    <button class="nav-btn next" onclick="goToSlide(2)"></button>
+                </div>
+            </div>
+
+
+
+             
+        </main>
+        <footer>
+            <!-- footer -->
+            <div class="inner">
+                <ul>
+                    <li><a href="">가상카폐 소개</a></li>
+                    <li><a href="">기업 제휴 및 입점 문의</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="" class="red">개인정보처리방침</a></li>
+                    <li><a href="">사이트맵</a></li>
+                </ul>
+                <div class="footerBt">
+                    <div>
+                        <div class="t">
+                            <span>인천광역시 남동구 935</span>
+                            <span class="before">대표자 : 김홍길</span>
+                        </div>
+                        <div class="t">
+                            <span>사업자등록번호 : 219-85-00014</span>
+                            <span class="before">통신판매업신고번호 :  제5513호</span>
+                            <span class="before">전화 : 1000-2000</span>
+                        </div>
+                        <div class="c">COPYRIGHT 2018 LOTTEWORLD. ALL RIGHTS RESERVED.</div>
+                    </div>
+                    <div class="right">
+                        <select id="selectFamilySite" title="계열사 관련 사이트 새창열기">
+                            <option value="">계열사 관련 사이트</option>
+                            <option value="https://www.lotte.co.kr/main.do">이디야</option>
+                            <option value="https://www.lottewellfood.com/">할리스</option>
+                            <option value="https://company.lottechilsung.co.kr/kor/main/index.do">파스쿠치</option>
+                            <option value="https://www.fujifilm.co.kr/main.do">스타벅스</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sliderItems = document.querySelectorAll('.slider-item');
+            const navButtons = document.querySelectorAll('.slider-navigation button');
+
+            let currentSlide = 0;
+
+            // 초기에 첫 번째 슬라이드만 보이도록 설정
+            sliderItems[currentSlide].style.display = 'block';
+
+            // 각 네비게이션 버튼에 클릭 이벤트 추가
+            navButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    goToSlide(index); // 해당하는 슬라이드로 이동
+                });
+            });
+
+            // 슬라이드 이동 함수
+            function goToSlide(index) {
+                currentSlide = index; // 현재 슬라이드 인덱스 변경
+                updateSlider(); // 슬라이더 업데이트
+            }
+
+            // 슬라이더 업데이트 함수
+            function updateSlider() {
+                // 모든 슬라이드 숨기고 현재 슬라이드만 보이도록 설정
+                sliderItems.forEach((item, index) => {
+                    if (index === currentSlide) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // 네비게이션 버튼 활성화
+                navButtons.forEach((button, index) => {
+                    if (index === currentSlide) {
+                        button.classList.add('active'); // 현재 슬라이드에 해당하는 네비게이션 버튼 활성화
+                    } else {
+                        button.classList.remove('active'); // 나머지 버튼 비활성화
+                    }
+                });
+            }
+        });
+
+
+
+       
+    </script>
+</body>
+
+</html>

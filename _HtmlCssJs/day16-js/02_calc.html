@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="area top">
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" value="+">+</button>
+            <button type="button" value="c">c</button><br>
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" value="-">-</button><br>
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" value="*">*</button><br>
+            <button type="button" value=".">.</button>
+            <button type="button" value="0">0</button>
+            <button type="button" value="=">=</button>
+            <button type="button" value="/">/</button>
+        </div>
+    </div>
+    <h1 id="res"></h1>
+    <script>
+        const res = document.getElementById('res');
+        let fst = '';
+        let snd = '';
+        let op = '';
+        document.querySelector('.container').addEventListener('click', (e) => {
+            let val = e.target.value;
+            console.log(val);
+            switch (val) {
+                case 'c': fst = ''; snd = ''; res.innerText = ''; op = ''; break;
+                case '+': op = val; res.innerText += val; break;
+                case '-': op = val; res.innerText += val; break;
+                case '*': op = val; res.innerText += val; break;
+                case '/': op = val; res.innerText += val; break;
+                case '=':
+                    if (op == '+') res.innerText = Number(fst) + Number(snd);
+                    if (op == '-') res.innerText = Number(fst) - Number(snd);
+                    if (op == '*') res.innerText = Number(fst) * Number(snd);
+                    if (op == '/') res.innerText = Number(fst) / Number(snd);
+                    break;
+                default:
+                    (val == undefined) ? null : res.innerText += val;
+                    if (op == '') fst += val;
+                    else snd += val;
+                    break;
+            }
+        });
+
+    </script>
+</body>
+
+</html>

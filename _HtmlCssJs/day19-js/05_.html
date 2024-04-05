@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="createBtn">엘리먼트 만들기</button>
+    <div id="div"></div>
+    <script>
+        let cnt = 0;
+        document.getElementById('createBtn').addEventListener('click',()=>{
+            document.getElementById('div').innerHTML += `<button type="button" id="newBtn">생성된 버튼</button>`;
+        });
+
+        //btn 인식불가
+        //동적으로 생성된 엘리먼트에 이벤트 부여
+        //문서 전체에 리스너를 장착 엘리먼트 선택
+        document.addEventListener('click',(e)=>{
+            if(e.target.id=='newBtn'){
+                document.getElementById('div').innerHTML += `<h3>생성된 버튼 클릭</h3>`;
+            }
+        });
+    </script>
+</body>
+</html>

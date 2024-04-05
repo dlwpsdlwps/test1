@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        이름 : <input type="text" id="name"><br>
+        주민번호 : <input type="text" id="num"><br>
+        <button type="button" onclick="check()">확인</button>
+    </form>
+    <h3 id="result"></h3>
+    <script>
+        let result = document.getElementById('result');
+        function check() {
+            let name = document.getElementById('name').value;
+            let num = document.getElementById('num').value;
+            let gd = num.charAt(num.indexOf('-') + 1);
+            let gd2 = (gd === '1' || gd === '3') ? '남' : '여';
+            let mil = 0;
+            if (parseInt(num.slice(0, 2)) > 24) {
+                mil = 1900;
+            } else {
+                mil = 2000;
+            }
+            let age = 2024 - (parseInt(num.slice(0,2)) + mil);
+
+            result.innerText = `이름 : ${name}, 생년월일 : ${num.slice(0, num.indexOf('-'))}, 나이 : ${age}, 성별 : ${gd2}`;
+        }
+    </script>
+</body>
+
+</html>

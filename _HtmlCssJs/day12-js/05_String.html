@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            java에서
+        </li>
+        <li>
+            new String() : 객체 타입으로 선언 가능 / 추천하지 않음
+        </li>
+        <li>
+            length : 문자열의 총 길이
+        </li>
+    </ul>
+    <ul>
+        <li>
+            추출 관련 메서드 : substring(), substr(), slice()
+        </li>
+        <li>
+            문자 대체 관련 메서드 : repalce(old, new) : 처음 찾은 값만 가능
+        </li>
+        <li>
+            trim() : 양쪽 공백 제거
+        </li>
+        <li>
+            padStart(길이, 채울문자) / padEnd(길이, 채울문자)
+            010101-4****** / ****시
+        </li>
+        <li>
+            charAt(index) / indexOf()
+        </li>
+        <li>
+            startWith("문자열") / endWith("문자열")
+        </li>
+    </ul>
+    <script>
+        let str1 = "Apple, Banana, Orange";
+        console.log(str1.slice(0, 5)); //0번지부터 5번지까지 (마지막 번지는 포함하지 않음)
+        //slice는 substring과 사용 방법이 같음
+        //slice는 index -를 입력하면 뒤에서부터 추출 가능
+        console.log(str1.slice(-6));
+        //substring(startindex, endindex);
+        //substr(startindex, count);
+
+        let str2 = 'Hello java world~!! java';
+        let newStr2 = str2.replace('java', 'javascript');
+        console.log(str2);
+        console.log(newStr2);
+        //replaceAll : 전체 변경
+        // /단어/옵션 => /text/i (대소문자 구분 x)
+        // /단어/옵션 => /text/g (전역검색)
+        newStr2 = str2.replace(/java/g, 'javascript');
+        console.log(newStr2);
+        newStr2 = str2.replace(/JAVASCRIPT/ig, 'java');
+        console.log(newStr2);
+
+        let padText = 'abc';
+        console.log(padText.padEnd(20, '-'));
+
+        //010101-3123456 => 010101-3******
+        let rNum = '010101-3123456';
+        let rNumLen = rNum.length;
+        console.log(rNum.slice(0, rNum.indexOf('-') + 2).padEnd(rNumLen, '*'));
+
+        //rNum의 성별을 추출 => console에 출력
+        //- 다음의 숫자가 1,3이면 남 / 아니면 여
+        let a = rNum.charAt(rNum.indexOf('-') + 1);
+        if (a === '1' || a === '3') {
+            console.log('남');
+        } else {
+            console.log('여');
+        }
+
+        //삼항 연산자
+        let id = rNum.charAt(rNum.indexOf('-') + 1);
+        console.log((id === '1' || id === '3') ? '남' : '여');
+
+        let fullFileName = '20240318_javascript.string_method.html';
+        //파일명 추출 javascript.string_method
+        console.log(fullFileName.slice(fullFileName.indexOf('_') + 1, fullFileName.lastIndexOf('.')));
+        //작성일자 추출 20240318
+        console.log(fullFileName.slice(0, fullFileName.indexOf('_')));
+        //확장만 추출 html
+        console.log(fullFileName.slice(fullFileName.lastIndexOf('.') + 1));
+
+    </script>
+</body>
+
+</html>

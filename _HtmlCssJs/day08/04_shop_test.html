@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <style>
+        .container{
+            width: 100%;
+            border: 1px solid;
+            font-family: "Jua", sans-serif;
+        }
+        /* bar */
+        .bar{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            margin: 10px auto;
+        }
+        .bar .logo{
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+        }
+        .bar ul{
+            display: flex;
+        }
+        .bar ul li{
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .bar a{
+            color: black;
+        }
+        .bar ul a:hover{
+            color: burlywood;
+        }
+        /* main */
+        .main{
+            background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0.1)) ,url(../image/design.jpg);
+            height: 700px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /* title */
+        .title{
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: burlywood;
+            margin: 30px;
+        }
+        /* list */
+        .list .line{
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            overflow: auto;
+        }
+        .list li a{
+            color: black;
+            display: flex;
+            width: 200px;
+            height: 300px;
+            margin: 0 30px;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            position: relative;
+        }
+        .list .text{
+            position: absolute;
+            color: red;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            /* 화면에서 사라지게 */
+            display: none;
+        }
+        .list div:hover~.text{
+            /* hover의 대상이 다른 객체일 경우 ~ */
+            display: block;
+        }
+        .list li a p:hover{
+            color: burlywood;
+        }
+        .list div{
+            background: url(../image/kogi-removebg-preview.png);
+            background-position: center;
+            background-size: cover;
+            width: 200px;
+            height: 250px;
+            transition: 0.5s;
+        }
+        .list div:hover{
+            filter: brightness(0.5);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bar">
+            <a href="" class="logo">SIMPLE SHOP</a>
+            <ul>
+                <li><a href="">Content</a></li>
+                <li><a href="">Shop</a></li>
+                <li><a href="">Cart</a></li>
+                <li><a href="">Login</a></li>
+            </ul>
+        </div>
+        <div class="main"></div>
+        <div class="title">Our New Product</div>
+        <div class="list">
+            <ul class="line l1">
+                <li>
+                    <a href="">
+                        <div></div>
+                        <p class="text">세일상품</p>
+                        <p>sunglasses</p>
+                        <p>49,000</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div></div>
+                        <p>sunglasses</p>
+                        <p>49,000</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div></div>
+                        <p>sunglasses</p>
+                        <p>49,000</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="line l2">
+                <li>
+                    <a href="">
+                        <div></div>
+                        <p>sunglasses</p>
+                        <p>49,000</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div></div>
+                        <p>sunglasses</p>
+                        <p>49,000</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div></div>
+                        <p>sunglasses</p>
+                        <p>49,000</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="line l3">
+                <li>
+                    <a href="">
+                        <div></div>
+                        <p>sunglasses</p>
+                        <p>49,000</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div></div>
+                        <p>sunglasses</p>
+                        <p>49,000</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div></div>
+                        <p>sunglasses</p>
+                        <p>49,000</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

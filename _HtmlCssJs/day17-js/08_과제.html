@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            float: left;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>여행 준비물 점검 목록</h2>
+        <form action="">
+            <input type="text" id="item" autofocus="true">
+            <button type="button" id="add">추가</button>
+        </form>
+        <div>
+            <ul id="itemList"></ul>
+        </div>
+    </div>
+    <script>
+        let cnt = 0;
+        document.addEventListener('click',(e)=>{
+            console.log(e.target.value);
+        });
+        document.getElementById('add').addEventListener('click',()=>{
+            let list = document.getElementById('itemList');
+            list.innerHTML += `<li id="list${cnt}">${item.value}</li><a href="" id="${cnt}" class="x" value="x">X</a>`;
+            // list.innerHTML += `<a href="" id="${cnt}" class="x">X</a>`;
+            cnt++;
+        });
+        document.querySelector('.x').addEventListener('click',()=>{
+            console.log('chk');
+        });
+
+    </script>
+</body>
+</html>

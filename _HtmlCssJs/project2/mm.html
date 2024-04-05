@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>board</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="../project2/mm.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+
+    </style>
+</head>
+<body id="top">
+    <div class="wrapper">
+        <div class="headarea">
+
+            <div class="logo">
+                <a href="">
+                </a>    
+            </div>
+
+            <div class="menu">
+                <a href="">Menu</a>
+                <a href="">Store</a>
+                <a href="">News</a>
+                <a href="">Story</a>
+            </div>
+
+            <div class="login">
+                <a href="">로그인</a>
+                <a href="">회원가입</a>
+                <a href="">000</a>
+                <div class="allsearch">
+                    <button type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                          </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="subtitle">
+            <div class="inner">
+                <h1>Board</h1>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li>●</li>
+                    <li><a href="../project/board.html">Board</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mainboard">
+            <div class="inner">
+                <div class="search">
+                    <p class="boardcnt"></p>
+                    <div class="searchinner">
+                        <input type="text" placeholder="검색어를 입력하세요." class="searchinput">
+                        <button type="button" class="searchBtn"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                          </svg></button>
+                    </div>
+                </div>
+            </div>
+            <ul class="boardlist">
+                <li class="mainlist" onclick="opencontent()" id="list0">
+                    <a href="#" class="openbtn">
+                        <span class="listnum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-megaphone-fill" viewBox="0 0 16 16">
+                            <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25 25 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009l.496.008a64 64 0 0 1 1.51.048m1.39 1.081q.428.032.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a66 66 0 0 1 1.692.064q.491.026.966.06"/>
+                          </svg></span>
+                        <span class="boardtitle">제목제목제목제목제목제목제목제목제목제목제목제목제목제제목제목제목제제목제목제목제제목제목제목제목제목제목</span>
+                        <span class="day">2024. 3. 28.</span>
+                        <span class="id">작성자</span>
+                    </a>
+                    <li id="contentopen0" class="ctopen" style="display: none;">content</li>        
+                </li>
+            </ul>
+            <div class="addbtn">
+                <a href="../project/boardwrite.html" class="boardwrite">글쓰기</a>
+                <button type="button" class="readmore">+</button>
+            </div>
+        </div>
+        <!-- <div class="subbox">
+            <a href="" class="newpage1">새창</a>
+            <a href="" class="newpage2">새창</a>
+            <a href="#top" class="topbtn"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-up-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <path d="M3.544 10.705A.5.5 0 0 0 4 11h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5a.5.5 0 0 0-.082.537"/>
+              </svg></a>
+        </div> -->
+    </div>
+
+    <footer>
+        <div class="fInfo">
+            <ul class="info">
+                <li>한국맥도날드(유)</li>
+                <li>대표이사: 김기원</li>
+                <li>사업자등록번호: 101-81-26409</li>
+                <li>전화주문: 1600-5252</li>
+                <p class="copy">COPYRIGHT &copy; 2019 ALL RIGHTS RESERVED BY McDonald's.</p>
+            </ul>
+        </div>
+    </footer>
+
+
+<!-- 로그인한 경우? : https://alisyabob.tistory.com/224 -->
+<!-- localstorage 사용 : https://cloudcoke.tistory.com/31 -->
+<!-- 
+    *1. 로컬 스토리지에서 JSON타입(key:value 값)의 데이터를 받아오도록 설정
+    *2. 게시글 등록하면, 게시판 페이지를 싱핼 후 domcontentloaded(문서 로드, 파싱) 시 출력, 등록되도록 설정
+    *3. 총 게시글 개수
+    *4. 게시글 작성, 등록 후 새로고침 / 게시글 넘버링?
+    *5. 제목 글자 수 범위 설정(overflow / textoverflow / wrap 설정)
+    *6. 게시글 클릭 시 출력화면 설정
+
+    7. 검색 시 게시글 출력
+    8. 더보기 기능  (참고 : https://velog.io/@parkheeyeun/%EB%8D%94%EB%B3%B4%EA%B8%B0-%EA%B8%B0%EB%8A%A5-%EA%B5%AC%ED%98%84)
+    9. 로그인 여부? 
+ -->
+ <script>
+    let today = new Date();
+    let day = today.toLocaleDateString();
+    let count = 0;
+
+    // 실행 시 로컬스토리지에 등록한 값 게시판 리스트로 출력
+    document.addEventListener('DOMContentLoaded', function() {
+        const boardlist = document.querySelector('.boardlist');
+        let posts = [];
+        const writedata = localStorage.getItem('post2');
+        if(writedata !== null){
+            posts = JSON.parse(writedata);
+        }
+
+        posts.forEach(function(post) {
+            count++;
+            boardlist.innerHTML += `
+                <li class="mainlist" id="list${count}" onclick="opencontent(${count})">
+                <a href="#" class="openbtn">    
+                    <span class="listnum">${count}</span>
+                    <span class="boardtitle">${post.title2}</span>
+                    <span class="day">${day}</span>
+                    <span class="id">${post.writername}</span>
+                </a>
+                <li class="ctopen" id="contentopen ${count}" style="display: none;">${post.content2}</li>            
+                </li>
+                `;
+        })
+            document.querySelector('.boardcnt').innerHTML = `총 ${count+1} 건의 게시글이 있습니다.`;
+            
+        });     
+        
+        // 클릭 시 content 보이기
+        function opencontent(count){
+                let a = document.getElementById(`contentopen ${count}`);
+                if(a.style.display == "none"){
+                    a.style.display="block";
+                }else if(a.style.display == "block"){
+                    a.style.display="none";
+                };
+        };
+
+
+</script>
+</body>
+</html>

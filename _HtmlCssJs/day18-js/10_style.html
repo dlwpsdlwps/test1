@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        element의 CSS 적용
+    </h1>
+    <ul>
+        <li>
+            element.style.property 형식으로 접근 및 변경이 가능
+        </li>
+        <li>
+            property는 -(하이픈) 적용X, 띄어쓰기 적용X
+        </li>
+        <li>
+            -(하이픈)을 제거하고 카멜표기법(뒤에오는 첫글자를 대문자로 변경)
+        </li>
+        <li>
+            Element.setAttribute(name, vlaue) : element 속성을 부여
+            이미 있는 속성이면 업데이트, 없는 속성이면 추가
+        </li>
+    </ul>
+    <h1 id="h1">색상변경</h1>
+    <input type="text" id="colorValue">
+    <button type="button" id="changeBtn">변경</button>
+    <!-- input창을 통해 색상명을 입력하고, 버튼을 클릭하면 
+        h1태그의 배경색이 입력한 색상으로 변경 -->
+        <script>
+            document.getElementById('changeBtn').addEventListener('click',()=>{
+                const h1 = document.getElementById('h1');
+                let colorValue = document.getElementById('colorValue').value;
+                h1.style.backgroundColor = colorValue;
+            })
+        </script>
+</body>
+</html>

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+
+
+    <title>영실업</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-127732249-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-127732249-1');
+
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="영실업">
+    <meta property="og:url" content="http://www.youngtoys.com/kor/index.do">
+    <meta property="og:image" content="http://www.youngtoys.com/images/common/logo_b.gif">
+    <meta property="og:description" content="완구 컨텐츠 기업, 또봇V, 베이블레이드, 메탈리온, 시크릿쥬쥬, 콩순이, LOL서프라이즈, 시크릿아트">
+    <link rel="stylesheet" href="../영실업/css/kor/content.css" type="text/css">
+    <link rel="stylesheet" href="../영실업/css/kor/swiper.css" type="text/css">
+    <script type="text/javascript" src="/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.cycle.all.min.js"></script>
+    <script type="text/javascript" src="/js/ui.js"></script>
+    <script type="text/javascript" src="/js/slick.js"></script>
+    <script type="text/javascript" src="/js/efusioni.js"></script>
+    <script type="text/javascript" src="/js/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/imagesloaded.pkgd.js?"></script>
+    <link rel="stylesheet" href="../영실업/css/kor/main.css" type="text/css">
+    <script type="text/javascript" src="/js/mainVisual.js"></script>
+    <script type="text/javascript" src="/js/lang.js"></script>
+    <script>
+        $(function () {
+
+
+            $('.mainMovie .slide').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                focusOnSelect: false,
+                arrows: true
+            });
+
+            mainMovieArrowSet(4, 1);
+            $('.mainMovie .slide').on("beforeChange", function () {
+                var D_prev = $(".mainMovie .slide .slick-prev");
+                var D_next = $(".mainMovie .slide .slick-next");
+                D_prev.css("left", "-100%");
+                D_next.css("right", "-100%");
+            })
+
+            $('.mainMovie .slide').on("afterChange", function (event, slick, currentSlide) {
+                var totalNum = slick.slideCount;
+                var nowNum = currentSlide + 1; //2
+                mainMovieArrowSet(totalNum, nowNum);
+            });
+            function mainMovieArrowSet(total, num) {
+                var totalNum = total;
+                var nowNum = num
+                var prevNum = nowNum - 1;
+                var nextNum = nowNum + 1;
+
+                var D_prev = $(".mainMovie .slide .slick-prev");
+                var D_next = $(".mainMovie .slide .slick-next");
+
+                if (prevNum <= 0) {
+                    prevNum = totalNum;
+                }
+                if (nextNum > totalNum) {
+                    nextNum = 1;
+                }
+                var prevTxt = $(".mainMovie .slide #slideNum" + prevNum).attr("data");
+                var nextTxt = $(".mainMovie .slide #slideNum" + nextNum).attr("data");
+                D_prev.html(prevTxt);
+                D_next.html(nextTxt);
+                D_prev.css("left", "-85%");
+                D_next.css("right", "-85%");
+            }
+
+            var videoMovie = ["../영실업/images/main/frame/Circle_kong_00.png", "../영실업/images/main/frame/Circle_kong_01.png", "../영실업/images/main/frame/Circle_kong_02.png", "../영실업/images/main/frame/Circle_kong_03.png", "../영실업/images/main/frame/Circle_kong_04.png", "../영실업/images/main/frame/Circle_kong_05.png", "../영실업/images/main/frame/Circle_kong_06.png", "../영실업/images/main/frame/Circle_kong_07.png", "../영실업/images/main/frame/Circle_kong_08.png", "../영실업/images/main/frame/Circle_kong_09.png", "../영실업/images/main/frame/Circle_kong_10.png", "../영실업/images/main/frame/Circle_kong_11.png", "../영실업/images/main/frame/Circle_kong_12.png", "../영실업/images/main/frame/Circle_kong_13.png", "../영실업/images/main/frame/Circle_kong_14.png", "../영실업/images/main/frame/Circle_kong_15.png", "../영실업/images/main/frame/Circle_kong_16.png", "../영실업/images/main/frame/Circle_kong_17.png", "../영실업/images/main/frame/Circle_kong_18.png", "../영실업/images/main/frame/Circle_kong_19.png", "../영실업/images/main/frame/Circle_kong_20.png", "../영실업/images/main/frame/Circle_kong_21.png", "../영실업/images/main/frame/Circle_kong_22.png", "../영실업/images/main/frame/Circle_kong_23.png", "../영실업/images/main/frame/Circle_kong_24.png", "../영실업/images/main/frame/Circle_kong_25.png", "../영실업/images/main/frame/Circle_kong_26.png", "../영실업/images/main/frame/Circle_kong_27.png", "../영실업/images/main/frame/Circle_kong_28.png", "../영실업/images/main/frame/Circle_kong_29.png", "../영실업/images/main/frame/Circle_kong_30.png", "../영실업/images/main/frame/Circle_kong_31.png", "../영실업/images/main/frame/Circle_kong_32.png", "../영실업/images/main/frame/Circle_kong_33.png", "../영실업/images/main/frame/Circle_kong_34.png", "../영실업/images/main/frame/Circle_kong_35.png", "../영실업/images/main/frame/Circle_kong_36.png"];
+            var videoMovie2 = ["../영실업/images/main/frame/Circle_tobot2_00.png", "../영실업/images/main/frame/Circle_tobot2_01.png", "../영실업/images/main/frame/Circle_tobot2_02.png", "../영실업/images/main/frame/Circle_tobot2_03.png", "../영실업/images/main/frame/Circle_tobot2_04.png", "../영실업/images/main/frame/Circle_tobot2_05.png", "../영실업/images/main/frame/Circle_tobot2_06.png", "../영실업/images/main/frame/Circle_tobot2_07.png", "../영실업/images/main/frame/Circle_tobot2_08.png", "../영실업/images/main/frame/Circle_tobot2_09.png", "../영실업/images/main/frame/Circle_tobot2_10.png", "../영실업/images/main/frame/Circle_tobot2_11.png", "../영실업/images/main/frame/Circle_tobot2_12.png", "../영실업/images/main/frame/Circle_tobot2_13.png", "../영실업/images/main/frame/Circle_tobot2_14.png", "../영실업/images/main/frame/Circle_tobot2_15.png", "../영실업/images/main/frame/Circle_tobot2_16.png", "../영실업/images/main/frame/Circle_tobot2_17.png", "../영실업/images/main/frame/Circle_tobot2_18.png", "../영실업/images/main/frame/Circle_tobot2_19.png", "../영실업/images/main/frame/Circle_tobot2_20.png", "../영실업/images/main/frame/Circle_tobot2_21.png", "../영실업/images/main/frame/Circle_tobot2_22.png", "../영실업/images/main/frame/Circle_tobot2_23.png", "../영실업/images/main/frame/Circle_tobot2_24.png", "../영실업/images/main/frame/Circle_tobot2_25.png", "../영실업/images/main/frame/Circle_tobot2_26.png", "../영실업/images/main/frame/Circle_tobot2_27.png", "../영실업/images/main/frame/Circle_tobot2_28.png", "../영실업/images/main/frame/Circle_tobot2_29.png", "../영실업/images/main/frame/Circle_tobot2_30.png", "../영실업/images/main/frame/Circle_tobot2_31.png", "../영실업/images/main/frame/Circle_tobot2_32.png", "../영실업/images/main/frame/Circle_tobot2_33.png", "../영실업/images/main/frame/Circle_tobot2_34.png", "../영실업/images/main/frame/Circle_tobot2_35.png", "../영실업/images/main/frame/Circle_tobot2_36.png"];
+            var videoMovie3 = ["../영실업/images/main/frame/Circle_juju_00.png", "../영실업/images/main/frame/Circle_juju_01.png", "../영실업/images/main/frame/Circle_juju_02.png", "../영실업/images/main/frame/Circle_juju_03.png", "../영실업/images/main/frame/Circle_juju_04.png", "../영실업/images/main/frame/Circle_juju_05.png", "../영실업/images/main/frame/Circle_juju_06.png", "../영실업/images/main/frame/Circle_juju_07.png", "../영실업/images/main/frame/Circle_juju_08.png", "../영실업/images/main/frame/Circle_juju_09.png", "../영실업/images/main/frame/Circle_juju_10.png", "../영실업/images/main/frame/Circle_juju_11.png", "../영실업/images/main/frame/Circle_juju_12.png", "../영실업/images/main/frame/Circle_juju_13.png", "../영실업/images/main/frame/Circle_juju_14.png", "../영실업/images/main/frame/Circle_juju_15.png", "../영실업/images/main/frame/Circle_juju_16.png", "../영실업/images/main/frame/Circle_juju_17.png", "../영실업/images/main/frame/Circle_juju_18.png", "../영실업/images/main/frame/Circle_juju_19.png", "../영실업/images/main/frame/Circle_juju_20.png", "../영실업/images/main/frame/Circle_juju_21.png", "../영실업/images/main/frame/Circle_juju_22.png", "../영실업/images/main/frame/Circle_juju_23.png", "../영실업/images/main/frame/Circle_juju_24.png", "../영실업/images/main/frame/Circle_juju_25.png", "../영실업/images/main/frame/Circle_juju_26.png", "../영실업/images/main/frame/Circle_juju_27.png", "../영실업/images/main/frame/Circle_juju_28.png", "../영실업/images/main/frame/Circle_juju_29.png", "../영실업/images/main/frame/Circle_juju_30.png", "../영실업/images/main/frame/Circle_juju_31.png", "../영실업/images/main/frame/Circle_juju_32.png", "../영실업/images/main/frame/Circle_juju_33.png", "../영실업/images/main/frame/Circle_juju_34.png", "../영실업/images/main/frame/Circle_juju_35.png", "../영실업/images/main/frame/Circle_juju_36.png"];
+            var videoMovie4 = ["../영실업/images/main/frame/Circle_metalions_00.png", "../영실업/images/main/frame/Circle_metalions_01.png", "../영실업/images/main/frame/Circle_metalions_02.png", "../영실업/images/main/frame/Circle_metalions_03.png", "../영실업/images/main/frame/Circle_metalions_04.png", "../영실업/images/main/frame/Circle_metalions_05.png", "../영실업/images/main/frame/Circle_metalions_06.png", "../영실업/images/main/frame/Circle_metalions_07.png", "../영실업/images/main/frame/Circle_metalions_08.png", "../영실업/images/main/frame/Circle_metalions_09.png", "../영실업/images/main/frame/Circle_metalions_10.png", "../영실업/images/main/frame/Circle_metalions_11.png", "../영실업/images/main/frame/Circle_metalions_12.png", "../영실업/images/main/frame/Circle_metalions_13.png", "../영실업/images/main/frame/Circle_metalions_14.png", "../영실업/images/main/frame/Circle_metalions_15.png", "../영실업/images/main/frame/Circle_metalions_16.png", "../영실업/images/main/frame/Circle_metalions_17.png", "../영실업/images/main/frame/Circle_metalions_18.png", "../영실업/images/main/frame/Circle_metalions_19.png", "../영실업/images/main/frame/Circle_metalions_20.png", "../영실업/images/main/frame/Circle_metalions_21.png", "../영실업/images/main/frame/Circle_metalions_22.png", "../영실업/images/main/frame/Circle_metalions_23.png", "../영실업/images/main/frame/Circle_metalions_24.png", "../영실업/images/main/frame/Circle_metalions_25.png", "../영실업/images/main/frame/Circle_metalions_26.png", "../영실업/images/main/frame/Circle_metalions_27.png", "../영실업/images/main/frame/Circle_metalions_28.png", "../영실업/images/main/frame/Circle_metalions_29.png", "../영실업/images/main/frame/Circle_metalions_30.png", "../영실업/images/main/frame/Circle_metalions_31.png", "../영실업/images/main/frame/Circle_metalions_32.png", "../영실업/images/main/frame/Circle_metalions_33.png", "../영실업/images/main/frame/Circle_metalions_34.png", "../영실업/images/main/frame/Circle_metalions_35.png", "../영실업/images/main/frame/Circle_metalions_36.png"];
+
+            //video play
+            var videoMovie = new ef.visual.Player({
+                mode: "frame",
+                frame: videoMovie,
+                reverse: false,
+                length: 24,
+                width: 260,
+                height: 260,
+                container: $("#movie1"),
+                duration: 37
+            });
+
+            var videoMovie2 = new ef.visual.Player({
+                mode: "frame",
+                frame: videoMovie2,
+                reverse: false,
+                length: 24,
+                width: 260,
+                height: 260,
+                container: $("#movie2"),
+                duration: 37
+            });
+
+            var videoMovie3 = new ef.visual.Player({
+                mode: "frame",
+                frame: videoMovie3,
+                reverse: false,
+                length: 24,
+                width: 260,
+                height: 260,
+                container: $("#movie3"),
+                duration: 37
+            });
+
+            var videoMovie4 = new ef.visual.Player({
+                mode: "frame",
+                frame: videoMovie4,
+                reverse: false,
+                length: 24,
+                width: 260,
+                height: 260,
+                container: $("#movie4"),
+                duration: 37
+            });
+
+
+            $('.mainMovie .slideCont01').hover(function () {
+                videoMovie.play();
+            }, function () {
+                videoMovie.stop();
+            });
+
+            $('.mainMovie .slideCont02').hover(function () {
+                videoMovie2.play();
+            }, function () {
+                videoMovie2.stop();
+            });
+
+            $('.mainMovie .slideCont03').hover(function () {
+                videoMovie3.play();
+            }, function () {
+                videoMovie3.stop();
+            });
+
+            $('.mainMovie .slideCont04').hover(function () {
+                videoMovie4.play();
+            }, function () {
+                videoMovie4.stop();
+            });
+
+        });
+    </script>
+</head>
+
+<body class="main scrollNone" id="mainWrap">
+    <!-- //layerPopup -->
+    <!-- POPUP -->
+
+    <!--
+	<div id="divpop" class="popStyle1"> 
+		<table> 
+		<tr> 
+		    <td align="center"> 
+		    	<div class="popContentStyle1">
+		    		<a href="http://www.youngtoys.com/kor/notice/detail.do?seq=131"><img src="http://www.youngtoys.com/images/main/20220210popup.jpeg" width="600px"></a>
+		    	</div>
+		    </td> 
+		</tr> 
+		<tr style="height:36px;"> 
+		        <form name="notice_form"> 
+		    <td align=right> 
+		        <a href="javascript:todaycloseWin();">오늘 하루 이 창을 열지 않음</a>
+		        <a href="javascript:closeWin();"><B>[닫기]</B></a> 
+		    </td> 
+		</tr> 
+		        </form> 
+		</table> 
+		<script language="Javascript">
+		cookiedata = document.cookie;
+		if ( cookiedata.indexOf("ncookie=done") < 0 ){
+			document.getElementById('divpop').style.display = "block";
+		} else {
+			document.getElementById('divpop').style.display = "none";
+		}
+		</script>
+	</div>
+-->
+    <!--
+	<div id="divpop2" class="popStyle2"> 
+		<table> 
+		<tr> 
+		    <td align="center"> 
+		    	<div class="popContentStyle2">
+		    		<a href="http://www.youngtoys.com/kor/notice/detail.do?seq=126" target="_blank"><img src="http://www.youngtoys.com/images/main/20210707popup.jpg" width="600px"></a>
+		    	</div>
+		    </td> 
+		</tr> 
+		<tr style="height:36px;"> 
+		        <form name="notice_form"> 
+		    <td align=right> 
+		        <a href="javascript:todaycloseWin2();">오늘 하루 이 창을 열지 않음</a>
+		        <a href="javascript:closeWin2();"><B>[닫기]</B></a> 
+		    </td> 
+		</tr> 
+		        </form> 
+		</table>
+		<script language="Javascript">
+		cookiedata = document.cookie;
+		if ( cookiedata.indexOf("ncookie1=done") < 0 ){
+			document.getElementById('divpop2').style.display = "block";
+		} else {
+			document.getElementById('divpop2').style.display = "none";
+		}
+		</script>
+	</div>
+-->
+    <!-- wrapper -->
+    <div id="wrapper">
+
+
+
+        <div id="headerWrap">
+            <h1><a href="/kor/index.do"></a></h1>
+            <a href="#none" class="menuBtn"><img src="../영실업/images/common/menuBtn.gif" alt="메뉴"></a>
+            <!-- gnb -->
+            <div id="gnb">
+                <ul>
+                    <li class="brandMenu"><a href="/kor/brand/brand.do?brand=02">브랜드</a>
+                        <div class="deth2 brandInfo" style="display: none;">
+                            <ul>
+                                <li class="brand3 "><a href="/kor/brand/brand.do?brand=02"><img
+                                            src="../영실업/images/common/brandLogo_02.png" alt=""><span>콩순이</span></a></li>
+                                <li class="brand4 "><a href="/kor/brand/brand.do?brand=03"><img
+                                            src="../영실업/images/common/brandLogo_03.png" alt=""><span>시크릿쥬쥬</span></a></li>
+                                <li class="brand1 "><a href="/kor/brand/brand.do?brand=01"><img
+                                            src="../영실업/images/common/brandLogo_01.png" alt=""><span>또봇V</span></a></li>
+                                <li class="brand28 "><a href="/kor/brand/brand.do?brand=28"><img
+                                            src="../영실업/images/common/brandLogo_28.png" alt=""><span>또봇V슈퍼레이싱</span></a></li>
+                                <li class="brand2 "><a href="/kor/brand/brand.do?brand=13"><img
+                                            src="../영실업/images/common/brandLogo_13.png" alt=""><span>메탈리온</span></a></li>
+                                <li class="brand5 "><a href="/kor/brand/brand.do?brand=04"><img
+                                            src="../영실업/images/common/brandLogo_04.png" alt=""><span>베이블레이드 버스트</span></a>
+                                </li>
+                                <li class="brand6 "><a href="/kor/brand/brand.do?brand=08"><img
+                                            src="../영실업/images/common/brandLogo_08.png" alt=""><span> L.O.L 서프라이즈</span></a>
+                                </li>
+                                <li class="brand7 "><a href="/kor/brand/brand.do?brand=14"><img
+                                            src="../영실업/images/common/brandLogo_14.png" alt=""><span>트레져X</span></a></li>
+                                <li class="brand8 "><a href="/kor/brand/brand.do?brand=19"><img
+                                            src="../영실업/images/common/brandLogo_19.png" alt=""><span>BT21</span></a></li>
+                                <li class="brand9 "><a href="/kor/brand/brand.do?brand=09"><img
+                                            src="../영실업/images/common/brandLogo_09.png" alt=""><span>시크릿 아트</span></a></li>
+                                <!--li class="brand22 "><a href="/kor/brand/brand.do?brand=22"><img src="../영실업/images/common/brandLogo_22.png" alt=""><span>겨울왕국2</span></a></li-->
+                                <li class="brand23 "><a href="/kor/brand/brand.do?brand=23"><img
+                                            src="../영실업/images/common/brandLogo_23.png" alt=""><span>킨디키즈</span></a></li>
+                                <li class="brand24 "><a href="/kor/brand/brand.do?brand=24"><img
+                                            src="../영실업/images/common/brandLogo_24.png" alt=""><span>플레이폼</span></a></li>
+                                <li class="brand25 "><a href="/kor/brand/brand.do?brand=25"><img
+                                            src="../영실업/images/common/brandLogo_25.png" alt=""><span>조조좀비</span></a></li>
+                                <li class="brand26 "><a href="/kor/brand/brand.do?brand=26"><img
+                                            src="../영실업/images/common/brandLogo_26.png" alt=""><span>아이스크림 몬스터</span></a></li>
+                                <li class="brand27 "><a href="/kor/brand/brand.do?brand=27"><img
+                                            src="../영실업/images/common/brandLogo_27.png" alt=""><span>리틀 라이브 펫</span></a></li>
+                                <li class="brand29 "><a href="/kor/brand/brand.do?brand=29"><img
+                                            src="../영실업/images/common/brandLogo_29.png" alt=""><span>블루피스 쉘리스</span></a></li>
+                                <!--li class="brand21 "><a href="/kor/brand/brand.do?brand=21"><img src="../영실업/images/common/brandLogo_21.png" alt=""><span>쿠로바</span></a></li-->
+                                <!--li class="brand16 "><a href="/kor/brand/brand.do?brand=15"><img src="../영실업/images/common/brandLogo_15.png" alt=""><span>모프보드</span></a></li-->
+                                <!--li class="brand17 "><a href="/kor/brand/brand.do?brand=16"><img src="../영실업/images/common/brandLogo_16.png" alt=""><span>레이저매드</span></a></li-->
+                                <!--li class="brand18 "><a href="/kor/brand/brand.do?brand=17"><img src="../영실업/images/common/brandLogo_17.png" alt=""><span>드론슈터</span></a></li-->
+                                <!--li class="brand19 "><a href="/kor/brand/brand.do?brand=18"><img src="../영실업/images/common/brandLogo_18.png" alt=""><span>마이크로휠</span></a></li-->
+                                <!--li class="brand20 "><a href="/kor/brand/brand.do?brand=20"><img src="../영실업/images/common/brandLogo_20.png" alt=""><span>EXOST Loop</span></a></li-->
+                                <!--li class="brand10 "><a href="/kor/brand/brand.do?brand=06"><img src="../영실업/images/common/brandLogo_06.png" alt=""><span>지오메카 캡틴다이노</span></a></li-->
+                                <!--li class="brand11 "><a href="/kor/brand/brand.do?brand=07"><img src="../영실업/images/common/brandLogo_07.png" alt=""><span>몬카트</span></a></li-->
+                                <!--li class="brand12 "><a href="/kor/brand/brand.do?brand=10"><img src="../영실업/images/common/brandLogo_10.png" alt=""><span>강철소방대 파이어로보</span></a></li-->
+                                <!--li class="brand13 "><a href="/kor/brand/brand.do?brand=11"><img src="../영실업/images/common/brandLogo_11.png" alt=""><span>파워배틀 와치카</span></a></li-->
+                                <!--li class="brand14 "><a href="/kor/brand/brand.do?brand=05"><img src="../영실업/images/common/brandLogo_05.png" alt=""><span>스낵월드</span></a></li-->
+                                <li class="brand15 "><a href="/kor/brand/brand.do?brand=12"><img
+                                            src="../영실업/images/common/brandLogo_12.png" alt=""><span>엘토이_Eltoy</span></a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <!--
+			<li><a href="/kor/product/new/list.do">제품</a>
+				<div class="deth2">
+					<ul>
+						<li><a href="/kor/product/new/list.do">신제품</a></li>
+						<li><a href="/kor/product/list.do?brand1=02">제품안내</a></li>
+					</ul>
+				</div>
+			</li>
+			<li><a href="/kor/animation/list.do?brand=02">애니메이션</a>
+				<div class="deth2">
+					<ul>
+						<li><a href="/kor/animation/list.do?brand=02">애니메이션</a></li>
+					</ul>
+				</div>	
+			</li>
+			<li><a href="/kor/notice/list.do">새소식</a>
+				<div class="deth2">
+					<ul>
+						<li><a href="/kor/notice/list.do">새소식</a></li>
+					</ul>
+				</div>	
+			</li>
+-->
+                    <li><a href="/kor/youngtoys/ytstory.do">영실업</a>
+                        <div class="deth2" style="display: none;">
+                            <ul>
+                                <li><a href="/kor/youngtoys/ytstory.do">스토리</a></li>
+
+                                <li><a href="/kor/youngtoys/recruit/talent.do">인재채용</a></li>
+                                <li><a href="/kor/youngtoys/map.do">오시는길</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a>공식몰</a>
+                        <div class="deth2" style="display: none;">
+                            <ul>
+                                <li><a href="https://www.youngtoysmall.com/" target="_blank">공식몰</a></li>
+                                <li><a href="https://brand.naver.com/youngtoys" target="_blank">네이버 브랜드 스토어</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <span id="gnbOverBar" style="left: 0px; display: inline;"></span>
+            </div>
+            <!-- //gnb -->
+
+            <!-- util -->
+            <ul class="util">
+                <li><a href="/kor/index.do">KOR</a></li>
+                <li><a href="/eng/index.do">ENG</a></li>
+            </ul>
+            <!-- //util -->
+
+            <!-- searchWrap -->
+            <div class="searchWrap">
+                <a href="/kor/search.do"><img src="../영실업/images/common/search.png" alt="검색" class="imgVm"></a>
+            </div>
+            <!-- //searchWrap -->
+
+        </div>
+        <!-- container -->
+        <div id="container">
+            <!-- visualWrap -->
+            <div id="visualArea" class="visualWrap" style="height: 917px;">
+
+                <div id="visual1" class="section section1 out">
+                    <div class="side">
+                        <strong class="logo"><img src="../영실업/images/common/brandLogo_02.png" alt="콩순이"></strong>
+                        <p class="tit">
+                            <span>한국을 대표하는 러블리돌</span>
+                            <b>KONGSUNI</b>
+                        </p>
+                    </div>
+                    <div class="video">
+                        <video class="afterShow" width="100%" height="100%" preload="auto" muted="muted"
+                            style="position: absolute; height: 852px; width: 1514px; top: 0px; left: 50%; margin-top: 0px; margin-left: -757px;">
+                            <source src="../영실업/images/main/video/mainVisual_02_Kongsuni.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="characterArea">
+                        <img src="../영실업/images/main/visual2_img_sub.png" alt="" class="sub">
+                        <img src="../영실업/images/main/visual2_img1.png" alt="" class="character1">
+                        <img src="../영실업/images/main/visual2_img2.png" alt="" class="character2">
+                        <img src="../영실업/images/main/visual2_img3.png" alt="" class="character3">
+                    </div>
+                    <div class="btnbox">
+                        <a href="/kor/brand/brand.do?brand=02">DETAIL VIEW</a>
+                        <a href="http://kongsuni.youngtoys.com/kor/index.do" target="_blank">BRAND SITE</a>
+                        <!-- <a href="#" target="_blank">BRAND SITE</a> -->
+                    </div>
+                    <span class="loading"></span>
+                </div>
+                <div id="visual2" class="section section2 on">
+                    <div class="side">
+                        <strong class="logo"><img src="../영실업/images/common/brandLogo_03.png" alt="Secret Jouju"></strong>
+                        <p class="tit">
+                            <span>별의 여신이 된 쥬쥬의 신비로운 스토리!</span>
+                            <b>SECRET<span>JOUJU</span></b>
+                        </p>
+                    </div>
+                    <div class="video">
+                        <video class="afterShow" width="100%" height="100%" preload="auto" muted="muted"
+                            style="position: absolute; height: 852px; width: 1514px; top: 0px; left: 50%; margin-top: 0px; margin-left: -757px;">
+                            <source src="../영실업/images/main/video/mainVisual_04_Screetjuju.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="characterArea">
+                        <img src="../영실업/images/main/visual4_img1.png" alt="" class="character1">
+                        <img src="../영실업/images/main/visual4_img2.png" alt="" class="character2">
+                        <img src="../영실업/images/main/visual4_img3.png" alt="" class="character3">
+                    </div>
+                    <div class="btnbox">
+                        <a href="/kor/brand/brand.do?brand=03">DETAIL VIEW</a>
+                        <a href="http://jouju.youngtoys.com/kor/index.do" target="_blank">BRAND SITE</a>
+                    </div>
+                    <span class="loading"></span>
+                </div>
+                <div id="visual3" class="section section3">
+                    <div class="side">
+                        <strong class="logo"><img src="../영실업/images/common/brandLogo_01.png" alt="또봇 V"></strong>
+                        <p class="tit">
+                            <span>또봇 우주수호대!</span>
+                            <b>TOBOT V</b>
+                        </p>
+                    </div>
+                    <div class="video">
+                        <video class="afterShow" width="100%" height="100%" preload="auto" autoplay="autoplay"
+                            muted="muted"
+                            style="position: absolute; height: 852px; width: 1514px; top: 0px; left: 50%; margin-top: 0px; margin-left: -757px;">
+                            <source src="../영실업/images/main/video/mainVisual_01_tobot3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="characterArea">
+                        <!--img src="../영실업/images/main/visual1_img_sub.png" alt="" class="sub"-->
+                        <img src="../영실업/images/main/visual1_img2.png" alt="" class="character">
+                    </div>
+                    <div class="btnbox">
+                        <a href="/kor/brand/brand.do?brand=01">DETAIL VIEW</a>
+                        <a href="http://tobot.youngtoys.com/kor/index.do" target="_blank">BRAND SITE</a>
+                    </div>
+                    <span class="loading"></span>
+                </div>
+                <div id="visual4" class="section section4">
+                    <div class="side">
+                        <strong class="logo"><img src="../영실업/images/common/brandLogo_13.png" alt="메탈리온"></strong>
+                        <p class="tit">
+                            <span>숨어있는 스톤을 찾아 지구를 지켜줘</span>
+                            <b>METALIONS</b>
+                        </p>
+                    </div>
+                    <div class="video">
+                        <video class="afterShow" width="100%" height="100%" preload="auto" muted="muted"
+                            style="position: absolute; height: 852px; width: 1514px; top: 0px; left: 50%; margin-top: 0px; margin-left: -757px;">
+                            <source src="../영실업/images/main/video/mainVisual_06_metalions.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="characterArea">
+                        <img src="../영실업/images/main/visual6_img1.png" alt="" class="character1">
+                    </div>
+                    <div class="btnbox">
+                        <a href="/kor/brand/brand.do?brand=13">DETAIL VIEW</a>
+                        <a href="http://metalions.youngtoys.com/kor/index.do" target="_blank">BRAND SITE</a>
+                        <!-- <a href="#" target="_blank">BRAND SITE</a> -->
+                    </div>
+                    <span class="loading"></span>
+                </div>
+                <div id="visual5" class="section section5">
+                    <div class="side">
+                        <strong class="logo"><img src="../영실업/images/common/brandLogo_04.png?ver=210603"
+                                alt="베이블레이드 버스트"></strong>
+                        <p class="tit">
+                            <span>짜릿한 배틀팽이의 최강자!</span>
+                            <b>BEYBLADE<br>BURST</b>
+                        </p>
+                    </div>
+                    <span class="sTxt">©Hiro Morita, BBBProject © TOMY</span>
+                    <div class="video">
+                        <video class="afterShow" width="100%" height="100%" preload="auto" muted="muted"
+                            style="position: absolute; height: 852px; width: 1514px; top: 0px; left: 50%; margin-top: 0px; margin-left: -757px;">
+                            <source src="../영실업/images/main/video/mainVisual_03_Blade3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="characterArea">
+                        <!-- img src="../영실업/images/main/visual3_img_sub.png" alt="" class="sub" -->
+                        <img src="../영실업/images/main/visual3_img5.png" alt="" class="character5">
+                        <img src="../영실업/images/main/visual3_img6.png" alt="" class="character6">
+                    </div>
+                    <div class="btnbox">
+                        <a href="/kor/brand/brand.do?brand=04">DETAIL VIEW</a>
+                        <!--a href="https://www.beybladeburst.co.kr/" target="_blank">BRAND SITE</a-->
+                    </div>
+                    <span class="loading"></span>
+                </div>
+                <div id="visual6" class="section section6">
+                    <div class="side">
+                        <strong class="logo"><img src="../영실업/images/common/brandLogo_08.png" alt="L.O.L"></strong>
+                        <p class="tit">
+                            <span>엉뚱한 아기들의 즐거운 세상!</span>
+                            <b>L.O.L<span>SURPRISE</span></b>
+                        </p>
+                    </div>
+                    <div class="video">
+                        <video class="afterShow" width="100%" height="100%" preload="auto" muted="muted"
+                            style="position: absolute; height: 852px; width: 1514px; top: 0px; left: 50%; margin-top: 0px; margin-left: -757px;">
+                            <source src="../영실업/images/main/video/mainVisual_06_lol.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="characterArea">
+                        <img src="../영실업/images/main/visual8_img_sub.png" alt="" class="sub">
+                        <img src="../영실업/images/main/visual8_img1.png" alt="" class="character1">
+                        <img src="../영실업/images/main/visual8_img2.png" alt="" class="character2">
+                        <img src="../영실업/images/main/visual8_img3.png" alt="" class="character3">
+                    </div>
+                    <div class="btnbox">
+                        <a href="/kor/brand/brand.do?brand=08">DETAIL VIEW</a>
+                        <a href="http://www.lolsurprise.co.kr/" target="_blank">BRAND SITE</a>
+                    </div>
+                    <span class="loading"></span>
+                </div>
+
+                <ul id="visualPaging" class="visualControlls">
+                    <li class=""><a href="#" data="1">1</a></li>
+                    <li class="on"><a href="#" data="2">2</a></li>
+                    <li class=""><a href="#" data="3">3</a></li>
+                    <li class=""><a href="#" data="4">4</a></li>
+                    <li class=""><a href="#" data="5">5</a></li>
+                    <li class=""><a href="#" data="6">6</a></li>
+                </ul>
+            </div> <!-- //visualWrap -->
+
+            <!-- mainProduct -->
+            <div class="mainProduct">
+                <h2>New Product</h2>
+                <ul>
+
+                    <li>
+                        <a href="/kor/product/detail.do?seq=2552">
+                            <span class="brandLogo"><img src="../영실업/images/common/brandLogo_01.png" alt="또봇V"></span>
+                            <img src="/upload/product/46750f9f-611d-4cfc-ac16-8332bcdd7c82.jpg" alt=""><span
+                                class="brandTit">또봇 V 타키온</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/kor/product/detail.do?seq=2648">
+                            <span class="brandLogo"><img src="../영실업/images/common/brandLogo_03.png" alt="또봇V"></span>
+                            <img src="/upload/product/fcd3b331-a7c5-4e32-83f3-9bf2ead06239.jpg" alt=""><span
+                                class="brandTit">(여행을 좋아해) 쥬쥬 캐리어 하우스</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/kor/product/detail.do?seq=2649">
+                            <span class="brandLogo"><img src="../영실업/images/common/brandLogo_02.png" alt="또봇V"></span>
+                            <img src="" alt=""><span class="brandTit">콩순이 AI 톡톡</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/kor/product/detail.do?seq=2629">
+                            <span class="brandLogo"><img src="../영실업/images/common/brandLogo_08.png" alt="또봇V"></span>
+                            <img src="/upload/product/1495caf4-341f-45dd-9543-17a2555fffd6.jpg" alt=""><span
+                                class="brandTit">L.O.L 서프라이즈! 겨울 이야기</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/kor/product/detail.do?seq=2598">
+                            <span class="brandLogo"><img src="../영실업/images/common/brandLogo_04.png" alt="또봇V"></span>
+                            <img src="/upload/product/cbb002ce-7085-4ca3-869c-3e500bd0383c.jpg" alt=""><span
+                                class="brandTit">B-187 세이비어 발키리.Sh-7</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- //mainProduct -->
+
+            <!-- mainMovie -->
+            <div class="mainMovie">
+                <h2>Young Movies</h2>
+
+                <div class="slide slick-initialized slick-slider slick-dotted"><button class="slick-prev slick-arrow"
+                        aria-label="Previous" type="button" style="display: block; left: -85%;">METALIONS</button>
+                    <div class="slick-list draggable">
+                        <div class="slick-track"
+                            style="opacity: 1; width: 3132px; transform: translate3d(-348px, 0px, 0px);">
+                            <div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true"
+                                style="width: 348px;" tabindex="-1">
+                                <div>
+                                    <div id="" class="slideCont slideCont04" data="METALIONS"
+                                        style="width: 100%; display: inline-block;">
+                                        <div>
+                                            <a href="/kor/animation/list.do?brand=13" tabindex="-1">
+                                                <p><span class="first">METALI</span><span class="movieCont" id=""><img
+                                                            src="../영실업/images/main/frame/Circle_metalions_00.png"
+                                                            alt=""></span><span class="txt">NS</span></p>
+                                                <span class="movieCharacter"><img src="../영실업/images/main/mainMovieBg0001.png"
+                                                        alt=""></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false"
+                                style="width: 348px;" role="tabpanel" id="slick-slide00">
+                                <div>
+                                    <div id="slideNum1" class="slideCont slideCont01" data="KONGSUNI"
+                                        style="width: 100%; display: inline-block;">
+                                        <div>
+                                            <a href="/kor/animation/list.do?brand=02" tabindex="0">
+                                                <p><span class="first">K</span><span class="movieCont" id="movie1"><img
+                                                            src="../영실업/images/main/frame/Circle_kong_00.png" width="260"
+                                                            height="260" id="efusioniPlayer1"></span><span
+                                                        class="txt">NGSUNI</span></p>
+                                                <span class="movieCharacter"><img src="../영실업/images/main/mainMovieBg0102.png"
+                                                        alt=""></span>
+                                                <span class="movie"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slick-slide" data-slick-index="1" aria-hidden="true" style="width: 348px;"
+                                tabindex="-1" role="tabpanel" id="slick-slide01">
+                                <div>
+                                    <div id="slideNum2" class="slideCont slideCont03" data="SECRETJOUJU"
+                                        style="width: 100%; display: inline-block;">
+                                        <div>
+                                            <a href="/kor/animation/list.do?brand=03" tabindex="-1">
+                                                <p><span class="first">SE</span><span class="movieCont" id="movie3"><img
+                                                            src="../영실업/images/main/frame/Circle_juju_00.png" width="260"
+                                                            height="260" id="efusioniPlayer3"></span><span
+                                                        class="txt">RET<span class="txt2">JOUJU</span></span></p>
+                                                <span class="movieCharacter"><img src="../영실업/images/main/mainMovieBg0302.png"
+                                                        alt=""></span>
+                                                <span class="movieCharacter2"><img
+                                                        src="../영실업/images/main/mainMovieBg0303.png" alt=""></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slick-slide" data-slick-index="2" aria-hidden="true" style="width: 348px;"
+                                tabindex="-1" role="tabpanel" id="slick-slide02">
+                                <div>
+                                    <div id="slideNum3" class="slideCont slideCont02" data="TOBOTV"
+                                        style="width: 100%; display: inline-block;">
+                                        <div>
+                                            <a href="/kor/animation/list.do?brand=01" tabindex="-1">
+                                                <p><span class="first">T</span><span class="movieCont" id="movie2"><img
+                                                            src="../영실업/images/main/frame/Circle_tobot2_00.png" width="260"
+                                                            height="260" id="efusioniPlayer2"></span><span
+                                                        class="txt">BOTV</span></p>
+                                                <span class="movieCharacter"><img src="../영실업/images/main/mainMovieBg0204.png"
+                                                        alt=""></span>
+                                                <span class="movieCharacter2"><img
+                                                        src="../영실업/images/main/mainMovieBg0205.png" alt=""></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 348px;"
+                                tabindex="-1" role="tabpanel" id="slick-slide03">
+                                <div>
+                                    <div id="slideNum4" class="slideCont slideCont04" data="METALIONS"
+                                        style="width: 100%; display: inline-block;">
+                                        <div>
+                                            <a href="/kor/animation/list.do?brand=13" tabindex="-1">
+                                                <p><span class="first">METALI</span><span class="movieCont"
+                                                        id="movie4"><img
+                                                            src="../영실업/images/main/frame/Circle_metalions_00.png" width="260"
+                                                            height="260" id="efusioniPlayer4"></span><span
+                                                        class="txt">NS</span></p>
+                                                <span class="movieCharacter"><img src="../영실업/images/main/mainMovieBg0001.png"
+                                                        alt=""></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slick-slide slick-cloned" data-slick-index="4" aria-hidden="true"
+                                style="width: 348px;" tabindex="-1">
+                                <div>
+                                    <div id="" class="slideCont slideCont01" data="KONGSUNI"
+                                        style="width: 100%; display: inline-block;">
+                                        <div>
+                                            <a href="/kor/animation/list.do?brand=02" tabindex="-1">
+                                                <p><span class="first">K</span><span class="movieCont" id=""><img
+                                                            src="../영실업/images/main/frame/Circle_kong_00.png"
+                                                            alt=""></span><span class="txt">NGSUNI</span></p>
+                                                <span class="movieCharacter"><img src="../영실업/images/main/mainMovieBg0102.png"
+                                                        alt=""></span>
+                                                <span class="movie"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slick-slide slick-cloned" data-slick-index="5" aria-hidden="true"
+                                style="width: 348px;" tabindex="-1">
+                                <div>
+                                    <div id="" class="slideCont slideCont03" data="SECRETJOUJU"
+                                        style="width: 100%; display: inline-block;">
+                                        <div>
+                                            <a href="/kor/animation/list.do?brand=03" tabindex="-1">
+                                                <p><span class="first">SE</span><span class="movieCont" id=""><img
+                                                            src="../영실업/images/main/frame/Circle_juju_00.png"
+                                                            alt=""></span><span class="txt">RET<span
+                                                            class="txt2">JOUJU</span></span></p>
+                                                <span class="movieCharacter"><img src="../영실업/images/main/mainMovieBg0302.png"
+                                                        alt=""></span>
+                                                <span class="movieCharacter2"><img
+                                                        src="../영실업/images/main/mainMovieBg0303.png" alt=""></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true"
+                                style="width: 348px;" tabindex="-1">
+                                <div>
+                                    <div id="" class="slideCont slideCont02" data="TOBOTV"
+                                        style="width: 100%; display: inline-block;">
+                                        <div>
+                                            <a href="/kor/animation/list.do?brand=01" tabindex="-1">
+                                                <p><span class="first">T</span><span class="movieCont" id=""><img
+                                                            src="../영실업/images/main/frame/Circle_tobot2_00.png"
+                                                            alt=""></span><span class="txt">BOTV</span></p>
+                                                <span class="movieCharacter"><img src="../영실업/images/main/mainMovieBg0204.png"
+                                                        alt=""></span>
+                                                <span class="movieCharacter2"><img
+                                                        src="../영실업/images/main/mainMovieBg0205.png" alt=""></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slick-slide slick-cloned" data-slick-index="7" aria-hidden="true"
+                                style="width: 348px;" tabindex="-1">
+                                <div>
+                                    <div id="" class="slideCont slideCont04" data="METALIONS"
+                                        style="width: 100%; display: inline-block;">
+                                        <div>
+                                            <a href="/kor/animation/list.do?brand=13" tabindex="-1">
+                                                <p><span class="first">METALI</span><span class="movieCont" id=""><img
+                                                            src="../영실업/images/main/frame/Circle_metalions_00.png"
+                                                            alt=""></span><span class="txt">NS</span></p>
+                                                <span class="movieCharacter"><img src="../영실업/images/main/mainMovieBg0001.png"
+                                                        alt=""></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><button class="slick-next slick-arrow" aria-label="Next" type="button"
+                        style="display: block; right: -85%;">SECRETJOUJU</button>
+                    <ul class="slick-dots" style="display: block;" role="tablist">
+                        <li class="slick-active" role="presentation"><button type="button" role="tab"
+                                id="slick-slide-control00" aria-controls="slick-slide00" aria-label="1 of 4"
+                                tabindex="0" aria-selected="true">1</button></li>
+                        <li role="presentation"><button type="button" role="tab" id="slick-slide-control01"
+                                aria-controls="slick-slide01" aria-label="2 of 4" tabindex="-1">2</button></li>
+                        <li role="presentation"><button type="button" role="tab" id="slick-slide-control02"
+                                aria-controls="slick-slide02" aria-label="3 of 4" tabindex="-1">3</button></li>
+                        <li role="presentation"><button type="button" role="tab" id="slick-slide-control03"
+                                aria-controls="slick-slide03" aria-label="4 of 4" tabindex="-1">4</button></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //mainMovie -->
+
+            <!-- mainBanner -->
+            <div class="mainBanner">
+                <div class="news">
+                    <h2>News</h2>
+                    <ul>
+
+                        <li><a href="/kor/notice/detail.do?seq=132">영실업, 애니메이션 '슈퍼텐 시간탐험대' 완구 11종
+                                출시<span>2022.03.28</span></a></li>
+
+                        <li><a href="/kor/notice/detail.do?seq=129">'하하의 베투맨’, 이번엔 장난감이다… 29일 영실업과 라이브 방송
+                                진행<span>2021.07.29</span></a></li>
+
+                        <li><a href="/kor/notice/detail.do?seq=128">베이블레이드 베이캠프<span>2021.07.28</span></a></li>
+
+                    </ul>
+                    <a href="/kor/notice/list.do?section=01" class="moreBtn">More</a>
+                </div>
+                <div class="event">
+                    <a href="/kor/notice/detail.do?seq=126">
+                        <p class="tit">Event<span>More</span></p>
+                        <p class="txt">
+
+
+                            7월8일부터 8월 7일까지<br> 또봇데이 빅세일!
+
+                        </p>
+                    </a>
+                </div>
+                <!--div class="schdule">
+		 			<a href="/kor/animation/schedule.do">
+		 				<p class="tit">TV Pr<span class="oImg"></span>gram<span>Schedule</span></p>
+		 				<p class="txt">영토이즈의 모든 브랜드 방영시간을 한눈에</p>
+		 			</a>
+		 		</div-->
+
+
+            </div>
+            <!-- //mainMovie -->
+
+        </div>
+        <!-- //container -->
+
+
+        <div id="footerWrap">
+            <div class="footerArea">
+                <div class="footerMenu">
+                    <div>
+                        <p class="footTit">브랜드</p>
+                        <ul>
+                            <li><a href="/kor/brand/brand.do?brand=02">콩순이</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=03">시크릿 쥬쥬</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=01">또봇V</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=28">또봇V슈퍼레이싱</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=13">메탈리온</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=04">베이블레이드 버스트</a></li>
+                            <!-- <li><a href="http://www.snack-world.co.kr/jaransnack.php" target="_blank">스낵월드</a></li> -->
+                            <li><a href="/kor/brand/brand.do?brand=08">L.O.L 서프라이즈</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=14">트레져 X</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=19">BT21</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=09">시크릿 아트</a></li>
+                            <!-- <li><a href="/kor/brand/brand.do?brand=22">겨울왕국2</a></li> -->
+                            <li><a href="/kor/brand/brand.do?brand=23">킨디키즈</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=24">플레이폼</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=25">조조좀비</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=26">아이스크림 몬스터</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=27">리틀 라이브 펫</a></li>
+                            <li><a href="/kor/brand/brand.do?brand=29">블루피스 쉘리스</a></li>
+                            <!-- <li><a href="/kor/brand/brand.do?brand=21">쿠로바</a></li> -->
+                            <!-- <li><a href="/kor/brand/brand.do?brand=15">모프보드</a></li> -->
+                            <!-- <li><a href="/kor/brand/brand.do?brand=16">레이져 매드</a></li> -->
+                            <!-- <li><a href="/kor/brand/brand.do?brand=17">드론 슈터</a></li> -->
+                            <!-- <li><a href="/kor/brand/brand.do?brand=18">마이크로 휠</a></li> -->
+                            <!-- <li><a href="/kor/brand/brand.do?brand=20">Exost Loop</a></li> -->
+                            <!-- <li><a href="/kor/brand/brand.do?brand=06">지오메카 캡틴다이노</a></li> -->
+                            <!-- <li><a href="/kor/brand/brand.do?brand=07">몬카트</a></li> -->
+                            <!-- <li><a href="/kor/brand/brand.do?brand=10">강철소방대 파이어로보</a></li> -->
+                            <!-- <li><a href="/kor/brand/brand.do?brand=11">파워배틀 와치카</a></li> -->
+                            <!-- <li><a href="/kor/brand/brand.do?brand=05">스낵월드</a></li> -->
+                            <li><a href="/kor/brand/brand.do?brand=12">엘토이_Eltoy</a></li>
+
+
+                        </ul>
+                    </div>
+                    <div>
+                        <div>
+                            <p class="footTit">제품</p>
+                            <ul>
+                                <li><a href="/kor/product/new/list.do">신제품</a></li>
+                                <li><a href="/kor/product/list.do">제품안내</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="footTit">애니메이션</p>
+                            <ul>
+                                <li><a href="/kor/animation/list.do">애니메이션</a></li>
+                                <!-- <li><a href="/kor/animation/schedule.do">TV 편성표</a></li> -->
+                                <!-- <li><a href="/kor/animation/app.do">APP 다운로드</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="footTit">새소식</p>
+                        <ul>
+                            <li><a href="/kor/notice/list.do">새소식</a></li>
+                            <!-- <li><a href="/kor/notice/newsletter.do">뉴스레터</a></li> -->
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="footTit">영실업</p>
+                        <ul>
+                            <li><a href="/kor/youngtoys/ytstory.do">YT스토리</a></li>
+                            <!-- <li><a href="javascript:('준비중입니다.')">기업소개</a></li> -->
+                            <li><a href="/kor/youngtoys/recruit/talent.do">인재채용</a>
+                                <ul>
+                                    <li><a href="/kor/youngtoys/recruit/talent.do">- 인재상</a></li>
+                                    <li><a href="/kor/youngtoys/recruit/benefits.do">- 복리후생</a></li>
+                                    <li><a href="/kor/youngtoys/recruit/chart.do">- 조직도</a></li>
+                                    <li><a href="/kor/youngtoys/recruit/recruitInfo.do">- 채용공고</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/kor/youngtoys/map.do">오시는길</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="snsArea">
+                    <ul>
+                        <li class="youtube"><a href="https://www.youtube.com/user/TOBOTYOUNGTOYS" target="_blank">또봇V
+                                &amp; 메탈리온</a>
+                            <span class="tobot">
+                                <span>또봇, 메탈리온, 지오메카 등 남아 공식 채널</span>
+                            </span>
+                        </li>
+                        <li class="youtube"><a href="https://www.youtube.com/user/JOUJUYOUNGTOYS"
+                                target="_blank">콩순이&amp;시크릿 쥬쥬</a>
+                            <span>콩순이 &amp; 시크릿 쥬쥬 공식 채널</span>
+                        </li>
+                        <li class="youtube"><a href="https://www.youtube.com/channel/UCb9QeMUewbmQ0Qzvmg6af1w"
+                                target="_blank">베이블레이드 버스트</a>
+                            <span>베이블레이드 버스트 코리아 공식 채널</span>
+                        </li>
+                        <li class="youtube"><a href="https://www.youtube.com/channel/UCiiG1udHyx1PpUBvVlPB7kw"
+                                target="_blank">두근두근 장난감</a>
+                            <span>장난감 언박싱 공식 채널</span>
+                        </li>
+                        <li class="instar"><a href="https://www.instagram.com/youngtoys.official" target="_blank">영실업 공식
+                                인스타그램</a></li>
+                        <!-- <li class="facebook"><a href="https://www.facebook.com/youngtoysforall" target="_blank">영실업 공식 페이스북 </a></li> -->
+                        <li class="blog"><a href="https://blog.naver.com/media_yt" target="_blank">영실업 공식 블로그</a></li>
+                        <li class="royalty"><a href="mailto:royalty@youngtoys.com" target="_blank">라이선스 문의</a>
+                            <span><a href="mailto:royalty@youngtoys.com"
+                                    target="_blank">royalty@youngtoys.com</a></span>
+                        </li>
+                        <li class="store"><a>영실업 공식몰</a>
+                            <span>
+                                <a href="https://www.youngtoysmall.com" target="_blank">영실업 공식몰</a>
+                                <a href="https://brand.naver.com/youngtoys" target="_blank">네이버 브랜드 스토어</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footAddress">
+                <div class="addressTxt">
+                    <p>서울시 용산구 한남동 고뫄스빌딩 7층, 8층, 9층(주)영실업 Email: webmaster@youngtoys.com / Tel : 02-557-8330 Fax :
+                        02-554-6715<br>
+                        <a href="/kor/privacy.do">개인정보처리방침</a>
+                        <span>　Copyright ⓒ YOUNGTOYS,INC. All rights reserved. </span>
+                    </p>
+                    <div class="familysiteArea">
+                        <div class="familysiteCont">
+                            <p><a href="">Family Site</a></p>
+                            <ul>
+                                <li><a href="http://tobot.youngtoys.com/kor/index.do" target="_blank">Tobot V</a></li>
+                                <li><a href="http://metalions.youngtoys.com/kor/index.do" target="_blank">Metalions</a>
+                                </li>
+                                <li><a href="http://kongsuni.youngtoys.com/kor/index.do" target="_blank">Kongsuni</a>
+                                </li>
+                                <li><a href="http://jouju.youngtoys.com/kor/index.do" target="_blank">Secret Jouju</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="http://as.young-si.com/" class="centerBtn" target="_blank">A/S CENTER</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //wrapper -->
+
+</body>
+
+</html>

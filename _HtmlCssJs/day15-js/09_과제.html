@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        1~45까지 중복되지 않게 숫자 6개를 랜덤으로 추출 => 출력
+        set 객체를 사용하여 생성
+    </h1>
+    <button id="ran">랜덤번호 6자리</button>
+    <h3 id="h1"></h3>
+    <button id="lott">당첨번호 7자리</button>
+    <h3 id="h2"></h3>
+    <button id="chk">결과확인</button>
+    <h3 id="h3"></h3>
+    <script>
+        let me = new Set();
+        let lott = new Set();
+        let bon = 0;
+        let bonChk = 0;
+        document.getElementById('ran').addEventListener('click', () => {
+            let str = '';
+            while (me.size != 6) {
+                me.add(Math.floor(Math.random() * 10) + 1);
+            };
+            me.forEach(function (v) {
+                str += v + ' ';
+                document.getElementById('h1').innerText = str;
+            });
+        });
+        let lottArr = [];
+        document.getElementById('lott').addEventListener('click', () => {
+            let str = '';
+            while (lott.size != 7) {
+                lott.add(Math.floor(Math.random() * 10) + 1);
+            };
+            lottArr = Array.from(lott);
+            bon = lottArr.pop();
+            // bon = Math.floor(Math.random() * 10) + 1;
+            lottArr.forEach(function (v) {
+                str += v + ' ';
+                document.getElementById('h2').innerText = str;
+            });
+            document.getElementById('h2').innerText += ' [' + bon + ']';
+        });
+
+        document.getElementById('chk').addEventListener('click', () => {
+            let cnt = 0;
+            me.forEach(function(v){
+                lottArr.forEach(function(v2){
+                    if(v==v2){
+                        cnt++;
+                        if(bon==v){
+                            bonChk = 1;
+                        }
+                    }
+                });
+            });
+            switch(cnt){
+                case 3: document.getElementById('h3').innerText = `(${cnt}), 5등입니다.`; break;
+                case 4: document.getElementById('h3').innerText = `(${cnt}), 4등입니다.`; break;
+                case 5: (bonChk==1)? document.getElementById('h3').innerText = `(${cnt}), 2등입니다.`: document.getElementById('h3').innerText = `(${cnt}), 3등입니다.`; break;
+                case 6: document.getElementById('h3').innerText = `(${cnt}), 1등입니다.`; break;
+                default: document.getElementById('h3').innerText = `(${cnt}), 꽝입니다.`; break;
+            }
+        });
+    </script>
+</body>
+
+</html>

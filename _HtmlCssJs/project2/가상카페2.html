@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- reset 파일 및 이벤트 CSS 파일 위치 설정 -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="가상카페2.css">
+    <style>
+        /* 붉은색 설명란 스타일 */
+        .description {
+            position: absolute;
+            background-color: red;
+            color: white;
+            padding: 10px;
+            display: none;
+        }
+
+        /* 슬라이더 및 점 스타일 */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            background-color: #f0f0f0;
+            margin-top: 20px;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background-color: #333;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .point {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 사이드바 -->
+   
+    <div class="sidebar">
+        <ul>
+            <!-- HTML 파일 연결 위치 변경 -->
+            <li><a href="roasting.html">원두 로스팅</a></li>
+            <li><a href="가상카페2.html">가상카폐</a></li>
+            <a href="#top" class="top" style="color: white;">top</a>
+        </ul>
+    </div>
+
+    <div class="wrap" id="top">
+        
+        <header>
+            <div class="inner">
+
+                
+                <h1>
+                    <a href="/projet2.html">
+                        <img src="./IMG/로고2.png" alt="" style="width: 100px; height: 100px;">
+                    </a>
+                </h1>
+                <ul class="top-menu">
+                    <li><a href="">임차문의</a></li>
+                    <li><a href="" class="before">RECRUIT</a></li>
+                    <li><a href="" class="bold">ENG</a></li>
+                </ul>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="">Menu</a></li>
+                        <li><a href="">Store</a></li>
+                        <li><a href="">What's New</a></li>
+                        <li><a href="">Story</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+           
+        </header>
+        <h1 style="justify-content: center; color: black; font-size:80px ; margin-bottom: 1030px;">원두선택</h1>
+        <main>
+          
+           
+            
+           <!-- 이벤트 박스 -->
+           
+           <div class="menu">
+           
+ 
+            
+            <div class="box1" onmouseover="showDescription(0)" onmouseleave="hideDescription(0)" onclick="selectBox(0)">
+                <img src="./원두설명1.jpg" width="400" height="400">
+                
+                <!-- 붉은색 설명란 -->
+                <div class="description">콜롬비아원두 강렬함 3 산미 8 단맛 2</div>
+            </div>
+
+            <div class="box1" onmouseover="showDescription(1)" onmouseleave="hideDescription(1)" onclick="selectBox(1)">
+                <img src="./원두설명2.jpg" width="400" height="400">
+                
+                <!-- 붉은색 설명란 -->
+                <div class="description">아라비카원두 강렬함 1 산미 4 단맛 2</div>
+            </div>
+            <div class="box1" onmouseover="showDescription(2)" onmouseleave="hideDescription(2)" onclick="selectBox(2)">
+                <img src="./원두설명3.jpg" width="400" height="400">
+                
+                <!-- 붉은색 설명란 -->
+                <div class="description">브라질원두 강렬함 2 산미 3 단맛 2</div>
+            </div>
+            <div class="box1" onmouseover="showDescription(3)" onmouseleave="hideDescription(3)" onclick="selectBox(3)">
+                <img src="./원두설명4.jpg" width="400" height="400">
+               
+                <!-- 붉은색 설명란 -->
+                <div class="description">코스타리카원두 강렬함 2 산미 7 단맛 2</div>
+            </div>
+            <div class="box1" onmouseover="showDescription(4)" onmouseleave="hideDescription(4)" onclick="selectBox(4)">
+                <img src="./원두설명5.jpg" width="400" height="400">
+                
+                <!-- 붉은색 설명란 -->
+                <div class="description">북한원두 강렬함 8 산미 8 단맛 2</div>
+            </div>
+            <div class="box1" onmouseover="showDescription(5)" onmouseleave="hideDescription(5)" onclick="selectBox(5)">
+                <img src="./원두설명6.jpg" width="400" height="400">
+               
+                <!-- 붉은색 설명란 -->
+                <div class="description">콩고원두 강렬함 2 산미 8 단맛 2</div>
+            </div>
+
+            <h1 style="justify-content: center; color: black; font-size:80px ; margin-top: 200px;">원두분쇄밀도</h1>
+
+            <!-- 레인지 슬라이더 -->
+            <div class="slider-container" style="margin-bottom: 200px;" id="sliderContainer" onmousedown="startDragging(event)" onmouseup="endDragging()">
+                <div class="slider" id="slider"></div>
+                <div class="point" id="point1" style="left: 0%;"></div>
+                <div class="point" id="point2" style="left: 12.5%;"></div>
+                <div class="point" id="point3" style="left: 25%;"></div>
+                <div class="point" id="point4" style="left: 37.5%;"></div>
+                <div class="point" id="point5" style="left: 50%;"></div>
+                <div class="point" id="point6" style="left: 62.5%;"></div>
+                <div class="point" id="point7" style="left: 75%;"></div>
+                <div class="point" id="point8" style="left: 87.5%;"></div>
+            </div>
+
+          
+        </div>
+
+        </div>
+
+       
+
+
+
+
+
+            <!-- 추출시간 -->
+            
+            
+
+
+
+            <div class="clock" id="clock">
+                <h1 style="font: bold; font-size: 50px;">추출시간</h1>
+                <div class="second-hand" id="secondHand"></div>
+                <div class="saved-value" id="savedValue">00</div>
+            </div>
+
+
+         
+
+            
+
+
+        </main>
+
+        
+
+        <footer>
+          
+
+           
+            <!-- 추천메뉴 생성버튼 -->
+            <button type="button" id="bt1">推薦</button>
+            <h1 style="
+           
+           
+            width: 600px;
+            height: 600px;
+            font-size: 40px;
+            font-weight: 700;
+            color: black; color: #333;" id="out"></h1>
+
+            <!-- footer -->
+            <div class="inner">
+                <ul>
+                    <li><a href="">가상카폐 소개</a></li>
+                    <li><a href="">기업 제휴 및 입점 문의</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="" class="red">개인정보처리방침</a></li>
+                    <li><a href="">사이트맵</a></li>
+                </ul>
+                <div class="footerBt">
+                    <div>
+                        <div class="t">
+                            <span>인천광역시 남동구 935</span>
+                            <span class="before">대표자 : 김홍길</span>
+                        </div>
+                        <div class="t">
+                            <span>사업자등록번호 : 219-85-00014</span>
+                            <span class="before">통신판매업신고번호 :  제5513호</span>
+                            <span class="before">전화 : 1000-2000</span>
+                        </div>
+                        <div class="c">COPYRIGHT 2018 LOTTEWORLD. ALL RIGHTS RESERVED.</div>
+                    </div>
+                    
+                    <div class="right">
+                        <select id="selectFamilySite" title="계열사 관련 사이트 새창열기">
+                            <option value="">계열사 관련 사이트</option>
+                            <option value="https://www.lotte.co.kr/main.do">이디야</option>
+                            <option value="https://www.lottewellfood.com/">할리스</option>
+                            <option value="https://company.lottechilsung.co.kr/kor/main/index.do">파스쿠치</option>
+                            <option value="https://www.fujifilm.co.kr/main.do">스타벅스</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        var selectedBoxes = []; // 선택된 박스의 인덱스를 저장하는 배열
+        var isDragging = false;
+        var index=0;
+        var value =0;
+        var adjustedSeconds =0; // 이 변수가 추가됨
+    
+        // 박스를 클릭하면 해당 박스의 인덱스를 배열에 저장하는 함수
+        function selectBox(index) {
+            if (selectedBoxes.includes(index)) {
+                // 이미 선택된 박스일 경우 배열에서 제거
+                selectedBoxes.splice(selectedBoxes.indexOf(index), 1);
+            } else {
+                // 선택되지 않은 박스일 경우 배열에 추가
+                selectedBoxes.push(index);
+            }
+    
+            // 선택된 박스 인덱스 배열을 콘솔에 출력
+            console.log(selectedBoxes);
+        }
+    
+        // 마우스 호버 시 붉은색 설명란 표시하는 함수
+        function showDescription(index) {
+            document.querySelectorAll('.description')[index].style.display = 'block';
+        }
+    
+        // 마우스 호버 종료 시 붉은색 설명란 숨기는 함수
+        function hideDescription(index) {
+            document.querySelectorAll('.description')[index].style.display = 'none';
+        }
+    
+        // 드래그 시작 시 이벤트
+        function startDragging(event) {
+            isDragging = true;
+            document.addEventListener('mousemove', moveSlider);
+            document.addEventListener('touchmove', moveSlider); // 모바일 터치 이벤트
+        }
+    
+        // 드래그 종료 시 이벤트
+        function endDragging() {
+            isDragging = false;
+            document.removeEventListener('mousemove', moveSlider);
+            document.removeEventListener('touchmove', moveSlider); // 모바일 터치 이벤트
+        }
+    
+        // 레인지 슬라이더 이동 함수
+        function moveSlider(event) {
+            if (isDragging) {
+                var sliderContainer = document.getElementById('sliderContainer');
+                var slider = document.getElementById('slider');
+                var offsetX = event.clientX - sliderContainer.offsetLeft; // 마우스 위치에서 컨테이너 시작 위치까지의 거리
+                var percentage = (offsetX / sliderContainer.offsetWidth) * 100; // 슬라이더의 위치를 퍼센트로 계산
+                if (percentage >= 0 && percentage <= 100) {
+                    slider.style.left = percentage + '%';
+                }
+    
+                // 슬라이더의 위치에 따라 해당하는 값 저장
+                value = Math.round((percentage / 100) * 8);
+                console.log('현재 값:', value);
+            }
+        }
+    
+        // 'top' 버튼을 클릭하면 상단으로 스크롤하는 기능
+        document.querySelector('.top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    
+        /* 시계 스크립트 라인 */
+        var secondHand = document.getElementById('secondHand');
+        var savedValueDisplay = document.getElementById('savedValue');
+        var clock = document.getElementById('clock');
+        isDragging = false; // 이 변수가 추가됨
+        var currentDegrees = 0;
+    
+        function updateClock() {
+            if (!isDragging) {
+                var now = new Date();
+                var seconds = now.getSeconds();
+                var degrees = seconds * 6; // 1초당 6도씩 회전
+                secondHand.style.transform = 'translate(-50%, -100%) rotate(' + degrees + 'deg)';
+            }
+        }
+    
+        function startAdjusting(event) {
+            isDragging = true;
+            var rect = clock.getBoundingClientRect();
+            var centerX = rect.left + rect.width / 2;
+            var centerY = rect.top + rect.height / 2;
+            var deltaX = event.clientX - centerX;
+            var deltaY = event.clientY - centerY;
+            currentDegrees = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+            document.addEventListener('mousemove', adjustClock);
+            document.addEventListener('mouseup', endAdjusting);
+        }
+    
+        function adjustClock(event) {
+            var rect = clock.getBoundingClientRect();
+            var centerX = rect.left + rect.width / 2;
+            var centerY = rect.top + rect.height / 2;
+            var deltaX = event.clientX - centerX;
+            var deltaY = event.clientY - centerY;
+            var newDegrees = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+            secondHand.style.transform = 'translate(-50%, -100%) rotate(' + (newDegrees - currentDegrees) + 'deg)';
+        }
+    
+        function endAdjusting() {
+            isDragging = false;
+            document.removeEventListener('mousemove', adjustClock);
+            document.removeEventListener('mouseup', endAdjusting);
+            currentDegrees = parseFloat(secondHand.style.transform.split('rotate(')[1].split('deg)')[0]);
+            // 조정된 각도를 저장하는 코드 추가
+            adjustedSeconds = Math.round(currentDegrees / 6); // 초로 변환
+            savedValueDisplay.textContent = adjustedSeconds.toString().padStart(2, '0');
+            console.log('조정된 초:', adjustedSeconds);
+        }
+    
+        clock.addEventListener('mousedown', startAdjusting);
+        setInterval(updateClock, 1000); // 매 초마다 시계 업데이트
+
+
+
+
+    
+        /* 추천메뉴 생성버튼 */
+        document.getElementById('bt1').addEventListener('click',()=>{
+          
+        let bine = selectedBoxes; //선택박스 선택원두
+        let bine1 ='';
+
+        let Crushings =  value; // 슬라이더값 분쇄강도
+        let Crushings1 = '';
+        let presstime = adjustedSeconds; // 시계 추출시간
+
+
+if(presstime<30){
+        switch(index){
+        case(0): bine1 ='산미가 강한 콜롬비아'; break;
+        case(1): bine1 ='달달한 아라비카'; break;
+        case(2): bine1 ='밍밍한 브라질';break;
+        case(3): bine1 ='은은한 부드러움 코스타리카';break;
+        case(4): bine1 ='베이직 북한';break;
+        case(5): bine1 ='향긋한 콩고';break;
+       
+       }
+
+
+       switch(Crushings){
+        case(0): Crushings1 = '프렌치프레스'; break;
+        case(1): Crushings1 = '커피메이커';break;
+        case(2): Crushings1 = '헨드드립'; break;
+        case(3): Crushings1 = '더치&에어로프레소'; break;
+        case(4):Crushings1 = '더치&에어로프레소'; break;
+        case(5):Crushings1 = '모카포트'; break;
+        case(6): Crushings1 = '모카포트'; break;
+        case(7):Crushings1 = '에스프레소';break;
+        case(8): Crushings1 = '에스프레소';break;
+       }
+       pt = '추출시간은 30초 미만으로 커피향이 진한';
+
+    }else if(presstime>=30){
+
+        switch(index){
+        case(0): bine1 ='산미가 강한 콜롬비아'; break;
+        case(1): bine1 ='달달한 아라비카'; break;
+        case(2): bine1 ='밍밍한 브라질';break;
+        case(3): bine1 ='은은한 부드러움 코스타리카';break;
+        case(4): bine1 ='베이직 북한';break;
+        case(5): bine1 ='향긋한 콩고';break;
+       
+       }
+
+
+       switch(Crushings){
+        case(0): Crushings1 = '프렌치프레스'; break;
+        case(1): Crushings1 = '커피메이커';break;
+        case(2): Crushings1 = '헨드드립'; break;
+        case(3): Crushings1 = '더치&에어로프레소'; break;
+        case(4):Crushings1 = '더치&에어로프레소'; break;
+        case(5):Crushings1 = '모카포트'; break;
+        case(6): Crushings1 = '모카포트'; break;
+        case(7):Crushings1 = '에스프레소';break;
+        case(8): Crushings1 = '에스프레소';break;
+       }
+       pt = '추출시간은 30초 이상으로 커피향이 연한';
+    }
+
+
+    document.getElementById('out').classList.add('fadeInRight');
+
+    
+    function selectBox(idx) {
+    index = idx; // Update the index variable
+    if (selectedBoxes.includes(index)) {
+        // 이미 선택된 박스일 경우 배열에서 제거
+        selectedBoxes.splice(selectedBoxes.indexOf(index), 1);
+    } else {
+        // 선택되지 않은 박스일 경우 배열에 추가
+        selectedBoxes.push(index);
+    }
+
+    // 선택된 박스 인덱스 배열을 콘솔에 출력
+    console.log(selectedBoxes);
+}
+setTimeout(() => {
+    
+            document.getElementById('out').innerHTML += `<ul style="
+
+        transform: translate(-50%, -50%); /* 가운데 정렬을 위한 변형 */
+    
+    opacity: 0; 
+    justify-content: space-around;
+    margin-left: 250px;
+    width: 600px;
+    height: 400px;
+    font-size: 40px;
+    font-weight: 700;
+    color: black;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -50%); /* 가운데 정렬을 위한 변형 */
+    animation: fadeInRight 1s ease forwards; /* 우측으로 페이드 인 애니메이션 적용 */
+    opacity: 0; 
+
+">
+
+
+    <li style="
+    margin-left: 250px;
+    opacity: 0; 
+    justify-content: space-around;
+    width: 600px;
+    height: 300px;
+    font-size: 40px;
+    font-weight: 700;
+    color: black;
+   
+    text-align: center;
+    transform: translate(-50%, -50%); /* 가운데 정렬을 위한 변형 */
+    animation: fadeInRight 1s ease forwards; /* 우측으로 페이드 인 애니메이션 적용 */
+     ">
+     
+     선택원두는${bine1},</li> 
+                
+     
+     <li style="
+     margin-left: 250px;
+     opacity: 0; 
+     justify-content: space-around;
+    width: 600px;
+    height: 200px;
+    font-size: 40px;
+    font-weight: 700;
+    color: black;
+   
+    text-align: center;
+    transform: translate(-50%, -50%); /* 가운데 정렬을 위한 변형 */
+    animation: fadeInRight 1s ease forwards; /* 우측으로 페이드 인 애니메이션 적용 */
+    ">
+    추천 커피기계는 <br>${Crushings1},</li>
+
+    <li style=" opacity: 0; 
+    margin-left: 250px;
+    justify-content: space-around;
+    width: 600px;
+    height: 100px;
+    font-size: 40px;
+    font-weight: 700;
+    color: black;
+   
+    text-align: center;
+    transform: translate(-50%, -50%); /* 가운데 정렬을 위한 변형 */
+    animation: fadeInRight 1s ease forwards; /* 우측으로 페이드 인 애니메이션 적용 */
+    ">
+    
+    ${pt}</li>
+    
+    </ul>
+                <img src="../menu/돌체 라떼.jpg" style=" transform: translate(-50%, -50%); /* 가운데 정렬을 위한 변형 */
+    animation: fadeInRight 1s ease forwards; /* 우측으로 페이드 인 애니메이션 적용 */
+    opacity: 0;
+                
+                
+                justify-content: right;" alt="">`;
+    
+            // setTimeout을 사용하여 애니메이션 효과가 끝난 후에 슬라이드 효과 제거
+            
+
+                
+                document.getElementById('out').style.transform = "translateX(0)";
+            }, 500); // 500ms 지연 후 실행
+            document.getElementById('out').style.opacity = 1;
+        });
+    </script>
+    
+</body>
+
+</html>

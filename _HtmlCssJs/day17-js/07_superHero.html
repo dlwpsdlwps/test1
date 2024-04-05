@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+        }
+        h4{
+            text-align: center;
+        }
+        div .d1,.d2,.d3{
+            box-sizing: border-box;
+            width: calc(100% / 3);
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json
+     -->
+    <h1 id="h1"></h1>
+    <h3 id="h3"></h3>
+    <div>
+        <div class="d1">
+            <h4 id="h4_1"></h4>
+            <p id="p_1"></p>
+            <ul id="ul_1"></ul>
+        </div>
+        <div class="d2">
+            <h4 id="h4_2"></h4>
+            <p id="p_2"></p>
+            <ul id="ul_2"></ul>
+        </div>
+        <div class="d3">
+            <h4 id="h4_3"></h4>
+            <p id="p_3"></p>
+            <ul id="ul_3"></ul>
+        </div>
+    </div>
+    <script>
+        fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+            .then(resp => resp.json())
+            .then(result => printData(result)) //성공시
+            .catch(err => console.log(err)); //실패시
+
+
+        function printData(obj) {
+            console.log(obj);
+            let h1 = document.getElementById('h1');
+            let h3 = document.getElementById('h3');
+            let h4_1 = document.getElementById('h4_1');
+            let p_1 = document.getElementById('p_1');
+
+            h1.innerHTML += obj.squadName + `<br>`;
+            h3.innerHTML += Object.keys(obj)[1] + ` : ` + obj.homeTown + ` // ` + Object.keys(obj)[2] + ` : ` + obj.formed + `<br>`;
+
+            h4_1.innerHTML += obj.members[0].name;
+            p_1.innerHTML += Object.keys(obj.members[0])[2] + ` : ` + obj.members[0].secretIdentity + `<br>`;
+            p_1.innerHTML += Object.keys(obj.members[0])[1] + ` : ` + obj.members[0].age + `<br>`;
+            p_1.innerHTML += `Super` + Object.keys(obj.members[0])[3] + ` : ` + `<br>`;
+            ul_1.innerHTML += `<li>${obj.members[0].powers[0]}</li>`;
+            ul_1.innerHTML += `<li>${obj.members[0].powers[1]}</li>`;
+            ul_1.innerHTML += `<li>${obj.members[0].powers[2]}</li>`;
+
+            h4_2.innerHTML += obj.members[1].name;
+            p_2.innerHTML += Object.keys(obj.members[1])[2] + ` : ` + obj.members[1].secretIdentity + `<br>`;
+            p_2.innerHTML += Object.keys(obj.members[1])[1] + ` : ` + obj.members[1].age + `<br>`;
+            p_2.innerHTML += `Super` + Object.keys(obj.members[0])[3] + ` : ` + `<br>`;
+            ul_2.innerHTML += `<li>${obj.members[1].powers[0]}</li>`;
+            ul_2.innerHTML += `<li>${obj.members[1].powers[1]}</li>`;
+            ul_2.innerHTML += `<li>${obj.members[1].powers[2]}</li>`;
+
+            h4_3.innerHTML += obj.members[2].name;
+            p_3.innerHTML += Object.keys(obj.members[2])[2] + ` : ` + obj.members[2].secretIdentity + `<br>`;
+            p_3.innerHTML += Object.keys(obj.members[2])[1] + ` : ` + obj.members[2].age + `<br>`;
+            p_3.innerHTML += `Super` + Object.keys(obj.members[0])[3] + ` : ` + `<br>`;
+            ul_3.innerHTML += `<li>${obj.members[2].powers[0]}</li>`;
+            ul_3.innerHTML += `<li>${obj.members[2].powers[1]}</li>`;
+            ul_3.innerHTML += `<li>${obj.members[2].powers[2]}</li>`;
+            ul_3.innerHTML += `<li>${obj.members[2].powers[3]}</li>`;
+            ul_3.innerHTML += `<li>${obj.members[2].powers[4]}</li>`;
+        }
+    </script>
+</body>
+
+</html>

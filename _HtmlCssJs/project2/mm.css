@@ -1,0 +1,355 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    width: 100%;
+    height: 140px;
+    top: 0%;
+    position: sticky;
+    background-color: white;
+    z-index: 1;
+}
+
+.wrapper>.headarea{
+    width: 1200px;
+    height: 140px;
+    margin: auto;
+    box-sizing: border-box;
+    position: relative;
+}
+.wrapper>.headarea>.logo{
+    width: 106px;
+    height: 93px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border: 1px solid black;
+}
+.wrapper>.headarea>.logo>a{
+    width: 106px;
+    height: 93px;
+}
+.wrapper>.headarea>.menu{
+    width: 600px;
+    height: 93px;
+    line-height: 93px;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-35%, -50%);
+    display: flex;
+    justify-content: space-between;
+}
+.wrapper>.headarea>.menu>a{
+    width: 100px;
+    height: 93px;
+    /* text-align: center; */
+    font-size: 20px;
+    font-weight: 700;
+}
+.wrapper>.headarea>.login{
+    width: 350px;
+    height: 93px;
+    line-height: 93px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.wrapper>.headarea>.login>a{
+    width: 70px;
+    height: 93px;
+}
+.wrapper>.headarea>.login>.allsearch{
+    width: 70px;
+    height: 93px;
+    line-height: 93px;
+}
+.wrapper>.headarea>.login>.allsearch>button{
+    width: 30px;
+    height: 30px;
+    border-style: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+
+.container{
+    width: 100%;
+    /* height: 1600px; */
+    text-align: center;
+}
+.container>.subtitle{
+    width: 100%;
+    height: 220px;
+    background-color: rgba(255, 166, 0, 0.589);
+    /* background-image: url(../image/room2.jpg); */
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+}
+.container>.subtitle>.inner{
+    /* width: 100%; */
+    height: 220px;
+}
+.container>.subtitle>.inner>h1{
+    margin: 0;
+    padding-top: 50px;
+    padding-left: 100px;
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+    text-align: left;
+}
+.container>.subtitle>.inner>ul{
+    margin-top: 50px;
+    padding-left: 100px;
+    display: flex;
+    justify-content: left;
+}
+.container>.subtitle>.inner>ul>li{
+    margin-right: 20px;
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 5px;
+    color: orange;
+}
+.container>.subtitle>.inner>ul>li>a{
+    font-size: 15px;
+    color: white;
+}
+
+.container>.subbox{
+    display: block;
+    width: 122px;
+    height: 350px;
+    position: sticky;
+    left: 90%;
+    bottom: 150px;
+    overflow: hidden;
+}
+.container>.subbox>.newpage1{
+    float: left;
+    width: 120px;
+    height: 120px;
+    border: 1px solid black;
+    line-height: 120px;
+    margin-bottom: 20px;
+}
+.container>.subbox>.newpage2{
+    float: left;
+    width: 120px;
+    height: 120px;
+    border: 1px solid black;
+    line-height: 120px;
+    margin-bottom: 30px;
+}
+.container>.subbox>.topbtn{
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+.mainboard{
+    width: 100%;
+    padding: 100px 225px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+}
+.mainboard .search{
+    width: 1200px;
+    line-height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+.mainboard .search>.boardcnt{
+    font-size: 17px;
+    font-weight: 700;
+    float: left;
+    color: rgba(128, 128, 128, 0.781);
+}
+.mainboard .search>.searchinner{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    float: right;
+}
+.mainboard .search>.searchinner>input{
+    width: 300px;
+    height: 50px;
+    padding-left: 30px;
+    border-radius: 30px;
+    border-color: rgba(128, 128, 128, 0.781);
+    color: rgba(128, 128, 128, 0.781);
+    margin-right: 20px;
+}
+.mainboard .search>.searchinner>button{
+    width: 50px;
+    height: 50px;
+    line-height: 65px;
+    border-color: white;
+    background-color: rgba(255, 166, 0, 0.589);
+    /* border: 2px solid rgba(255, 166, 0, 0.589); */
+    border-radius: 30px;
+    cursor: pointer;
+}
+.mainboard .search>.searchinner>button>svg{
+    color: rgba(128, 128, 128, 0.781);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mainboard .boardlist{
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    border-top: 2px solid black;
+    border-bottom: 1px solid black;
+}
+.mainboard .boardlist>.mainlist{
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    /* margin: 20px 0; */
+    font-size: 15px;
+    font-weight: 700;
+    border-top: 1px solid rgba(0, 0, 0, 0.363);
+    background-color: #80808021;
+    /* position: relative; */
+    z-index: 1;
+}
+.mainboard .boardlist>li>a{
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.671);
+
+}
+.mainboard .boardlist>li>a>.listnum{
+    width: 15%;
+    text-align: center;
+    color: rgba(255, 0, 0, 0.671);
+}
+.mainboard .boardlist>li>a>.boardtitle{
+    width: 55%;
+    text-align: left;
+    padding: 0 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+}
+.mainboard .boardlist>li>a>.day{
+    text-align: center;
+    width: 15%;
+    color: rgba(0, 0, 0, 0.438);
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+.mainboard .boardlist>li>a>.id{
+    text-align: center;
+    width: 15%;
+    color: rgba(0, 0, 0, 0.438);
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+/* open content 영역 */
+.mainboard .boardlist .ctopen{
+    width: 100%;
+    height: 200px;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0 200px;
+    overflow:hidden;
+    text-wrap: wrap;
+}
+
+
+
+
+.mainboard>.addbtn{
+    width: 1200px;
+    height: 200px;
+    margin: 30px auto;
+    text-align: center;
+    position: relative;
+
+}
+
+.mainboard>.addbtn>.boardwrite{
+    border-style: none;
+    background-color: rgba(255, 166, 0, 0.589);
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    float: right;
+    font-size: 17px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.616);
+    cursor: pointer;
+    
+}
+.mainboard>.addbtn>.readmore{
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 166, 0, 0.589);
+    border-radius: 50px;
+    border-style: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.616);
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+footer{
+    width: 100%;
+    height: 270px;
+    padding: 50px;
+    background-color: #292929;
+    box-sizing: border-box;
+}
+footer .info{
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(109, 109, 109, 0.658);
+}
+footer .info>li{
+    margin-bottom: 25px;
+}
+
